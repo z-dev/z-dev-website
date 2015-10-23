@@ -1,0 +1,66 @@
+.margin-row-top {
+margin-top: 20px;
+}
+
+.vertical-center {
+    float:none;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+/*html, body{
+  margin: 0;
+  padding: 0;
+  background-color: #414141;
+  font-family: Helvetica, arial, sans-serif;
+  color: #EFEFEF
+
+}
+
+
+.itemlist li a {
+  color: #EFEFEF;
+
+}
+
+.itemlist li a:hover {
+  color: red;
+}
+
+.itemlist li {
+  margin-left: 65px;
+}
+.h1 {
+  font-size: 110px;
+  margin-left: 48px;
+  font-family: Heletica , arial, sans-serif;
+
+}
+
+.medicbear {
+  float: left;
+  margin-left: 65px;
+  margin-right: 20px;
+}
+
+p {
+  margin-left: 65px;
+  font-size: 18px;
+  font-family: Helvetica, arial, sans-serif;
+  margin-right: 65px;
+
+}
+
+h2 {
+  margin-left: 65px;
+  font-size: 45px;
+}
+
+.recitems {
+  margin-top: 170px;
+}
+
+.p1 {
+  padding-top: 100px;
+}
+*/
