@@ -2,14 +2,14 @@
   "name": "Medic-Bear",
   "version": "0.0.1",
   "description": "",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
     "bootstrap-sass": "^3.3.5",
     "css-loader": "^0.21.0",
     "file-loader": "^0.8.4",
+    "htmllint-cli": "0.0.4",
     "node-sass": "^3.3.3",
     "sass-loader": "^3.0.0",
     "style-loader": "^0.13.0",
@@ -20,7 +20,9 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "node_modules/.bin/htmllint build/**/*.html",
+    "test": "npm run lint"
+
   },
   "author": "",
   "license": "ISC"
