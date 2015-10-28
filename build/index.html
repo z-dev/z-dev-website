@@ -2,23 +2,50 @@
   <head>
     <title>Medic Bear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="bundle.js"></script>`
+    <script src="bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
       <div class="row">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#recomended">Items </a></li>
+                <li><a href="#">Wiki</a></li>
+                <li><a href="#">Videos</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
         <h1 class="col-md-12 text-center">Better Medic Bear</h1>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary btn-bearenough">Are You Bear Enough?</button>
+          </div>
       </div>
       <div class="row margin-row-top">
         <img class="col-sm-4 hidden-xs medic-bear-image" src="images/medicbear.jpg" alt="Medic bear icon">
 
         <div class="vertical-center col-sm-8">
-          <p>Medic Bear is the greatest advancement in mobile mana and hp regenaration since "slahsers way" Faceless Void. Whith the most advanced technology we have created a Bear that is not only capable of bringing you your items as a courier, but also administer emergancy first aid to help keep you in the fight for longer. this is just a test to see how toy use git</p>
+          <div class="p1">
+            <p>Medic Bear is the greatest advancement in mobile mana and hp regenaration since "slahsers way" Faceless Void. Whith the most advanced technology we have created a Bear that is not only capable of bringing you your items as a courier, but also administer emergancy first aid to help keep you in the fight for longer. this is just a test to see how toy use git</p>
+          </div>
         </div>
       </div>
 
       <div class="col-md-12">
-        <h2>Recomended Items</h2>
+        <h2 id="recomended">Recomended Items</h2>
 
           <ul>
               <li><a href="http://dota2.gamepedia.com/Mana_boots" target="_blank">Arcan Boots</a></li>

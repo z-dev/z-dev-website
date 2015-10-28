@@ -6,5 +6,6 @@
     "attr-quote-style": "double",
     "class-style": "dash",
     "indent-style": "spaces",
-    "indent-width": 2
+    "indent-width": 2,
+    "id-class-style": "dash"
 }
