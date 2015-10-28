@@ -1,41 +1,57 @@
-
-.vertical-center {
-  float:none;
-  display:inline-block;
-  vertical-align:middle;
-}
-
-.medic-bear-image {
-  width: 370px;
-};
-
 h1 {
   font-size: 80px;
-
 }
-
-
-
+p {
+  color: $p-color;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  word-wrap: break-word;
+}
 body {
-  padding-top: 70px;
+  padding-top: 200px;
   font-family: 'Raleway', serif;
 }
-
+h6 {
+  font-size: $h6-font-size;
+  font-weight: normal;
+  color: #2B2B2B;
+}
+h4 {
+  font-size: 25.6px;
+  font-weight: normal;
+  color: #2B2B2B;
+}
 .brand > img {
-height: $navbar-height;
+  height: $navbar-height;
+  margin-left: 10px;
 }
 
 .services {
   background-color: #EEE;
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 .service-text-glyph-1 {
   float: left;
-  font-size: 40px;
-  color: blue;
+  font-size: 30px;
+  color: $zdev-primary-color;
   margin-top: 10px;
 }
 .service-text {
   margin-left: 50px;
+}
+.navbar-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.navbar-links{
+  padding-top: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 300;
+}
+.about-box {
+  padding-bottom: 110px;
 }

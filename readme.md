@@ -1,4 +1,4 @@
-#Medic Bear
+#ZDev Web Build
 
 This project has webpack with babel and scss. Bootstrap is imported and variables can be overridden.
 
