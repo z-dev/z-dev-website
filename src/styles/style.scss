@@ -1,6 +1,4 @@
-.margin-row-top {
-  margin-top: 40px;
-}
+
 .vertical-center {
   float:none;
   display:inline-block;
@@ -13,19 +11,31 @@
 
 h1 {
   font-size: 80px;
-}
-
-.p1 {
-  margin-top: 130px;
 
 }
 
-.btn-bearenough {
-  font-size: 35px;
-  margin-top: 15px;
-}
+
 
 body {
   padding-top: 70px;
+  font-family: 'Raleway', serif;
 }
 
+.brand > img {
+height: $navbar-height;
+}
+
+.services {
+  background-color: #EEE;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.service-text-glyph-1 {
+  float: left;
+  font-size: 40px;
+  color: blue;
+  margin-top: 10px;
+}
+.service-text {
+  margin-left: 50px;
+}

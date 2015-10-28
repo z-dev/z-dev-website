@@ -5,60 +5,95 @@
     <script src="bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="container">
+    <header>
+      <div class="container">
+        <div class="row">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="brand" rel="home" href="#" title="Z-Dev"><img src="/images/logo.svg"></a>
+              </div> <!-- /navbar-header -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#recomended">Items </a></li>
+                  <li><a href="#">Wiki</a></li>
+                  <li><a href="#">Videos</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div> <!-- /collapse navbar-collapse -->
+            </div> <!-- /containerfluid -->
+          </nav>
+        </div> <!-- /row -->
+      </div>  <!-- /container -->
+    </header>
+
+    <div id="about" class="about-box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 block">
+              <div class="col-xs-12 hidden-xs hidden-sm col-md-2 col-md-offset-1">
+                <img src="" alt="Richard Gill" class="img-responsive person-circle">
+              </div> <!-- /col-xs-12 -->
+              <div class="col-xs-12 col-md-5 col-md-offset-1">
+                <h4>Full stack application developer</h4>
+                <p>Full stack developer / hacker, with experience in both the corporate and start-up world. I enjoy learning new technologies and working with bright people on exciting ideas.</p>
+              </div> <!-- /col-xs-12 -->
+              <div class="col-xs-12 hidden-xs hidden-sm col-md-2 col-md-offset-1">
+                <img src="" alt="Richard Gill" class="img-responsive person-circle">
+              </div> <!-- /col-xs-12 -->
+            </div> <!-- /col-xs-12 block -->
+          </div> <!-- /row -->
+        </div> <!-- /container -->
+      </div> <!-- /about-box -->
+
+    <div id="survices" class="container-fluid services">
+      <h2 class="text-center">Services</h2>
       <div class="row">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#recomended">Items </a></li>
-                <li><a href="#">Wiki</a></li>
-                <li><a href="#">Videos</a></li>
-              </ul>
-            </div>
+        <div class="col-xs-12">
+          <div class="col-xs-12 col-sm-6 col-md-4 service-item">
+          <i class="glyphicon glyphicon-phone service-text-glyph-1"></i>
+            <div class="service-text">
+              <h6>Front end</h6>
+              <p>Interested in web development / apps. Experience with HTML, CSS, Javascript (AngularJs, React, JQuery) and iOS development</p>
+            </div> <!-- /service-text -->
           </div>
-        </nav>
-
-        <h1 class="col-md-12 text-center">Better Medic Bear</h1>
-          <div class="text-center">
-            <button type="button" class="btn btn-primary btn-bearenough">Are You Bear Enough?</button>
+          <div class="col-xs-12 col-sm-6 col-md-4 service-item">
+            <div class="service-text">
+              <h6>Backend code</h6>
+              <p>I code Ruby on Rails, NodeJs, C#, Java and many more. I've built quick prototypes to robust enterprise software, for investment banks, hedge funds and startups.</p>
+            </div> <!-- /service-text -->
           </div>
-      </div>
-      <div class="row margin-row-top">
-        <img class="col-sm-4 hidden-xs medic-bear-image" src="images/medicbear.jpg" alt="Medic bear icon">
-
-        <div class="vertical-center col-sm-8">
-          <div class="p1">
-            <p>Medic Bear is the greatest advancement in mobile mana and hp regenaration since "slahsers way" Faceless Void. Whith the most advanced technology we have created a Bear that is not only capable of bringing you your items as a courier, but also administer emergancy first aid to help keep you in the fight for longer. this is just a test to see how toy use git</p>
+          <div class="col-xs-12 col-sm-6 col-md-4 service-item">
+            <div class="service-text">
+              <h6>Backend code</h6>
+              <p>I code Ruby on Rails, NodeJs, C#, Java and many more. I've built quick prototypes to robust enterprise software, for investment banks, hedge funds and startups.</p>
+            </div> <!-- /service-text -->
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 service-item">
+            <div class="service-text">
+              <h6>Backend code</h6>
+              <p>I code Ruby on Rails, NodeJs, C#, Java and many more. I've built quick prototypes to robust enterprise software, for investment banks, hedge funds and startups.</p>
+            </div> <!-- /service-text -->
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 service-item">
+            <div class="service-text">
+              <h6>Backend code</h6>
+              <p>I code Ruby on Rails, NodeJs, C#, Java and many more. I've built quick prototypes to robust enterprise software, for investment banks, hedge funds and startups.</p>
+            </div> <!-- /service-text -->
+          </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-12">
-        <h2 id="recomended">Recomended Items</h2>
-
-          <ul>
-              <li><a href="http://dota2.gamepedia.com/Mana_boots" target="_blank">Arcan Boots</a></li>
-              <li><a href="http://dota2.gamepedia.com/Mekansm" target="_blank">Mekansm</a></li>
-              <li><a href="http://dota2.gamepedia.com/Tp_scroll" target="_blank">TP Scroll</a></li>
-              <li><a href="http://dota2.gamepedia.com/Pipe_of_Insight" target="_blank">Pipe of Insight</a></li>
-              <li><a href="http://dota2.gamepedia.com/Guardian_Greaves" target="_blank">Guardian Greaves</a></li>
-              <li><a href="http://dota2.gamepedia.com/Force_staff" target="_blank">Force Staff</a></li>
-              <li><a href="http://dota2.gamepedia.com/Ethereal_Blade" target="_blank">Ethereal Blade</a></li>
-          </ul>
-
-        <h2> Play Style </h2>
-        <p>The general idea behind the medic bear build is it use your position as a safelane farming core, to help get you core utility items faster, enabling your team to fight and push more often than the enemy. Aim to get you mekansm and Arcane Boots before 14 minutes game time and begin to group up with your team, start taking towers/fights to help further increase your gold and pushing power. You will not be able to put out a large amount of damage like this, but due to you and your bears naturaly high hp you will be able to stay in the fight longer, allowing for more entangle procs for some damage and a good disable.</p>
       </div>
     </div>
   </body>
