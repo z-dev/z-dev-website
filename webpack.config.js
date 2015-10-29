@@ -2,8 +2,7 @@ var path = require('path');
 
 module.exports = {
   entry: [
-    'webpack/hot/dev-server', //Hot reload
-    'webpack-dev-server/client?http://localhost:8080', //Refresh when src changes
+
     path.resolve(__dirname, 'src/scripts/main.js')
   ],
   output: {
