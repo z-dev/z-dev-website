@@ -2,7 +2,9 @@
   "name": "Medic-Bear",
   "version": "0.0.1",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "smooth-scroll": "cferdinandi/smooth-scroll"
+  },
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
