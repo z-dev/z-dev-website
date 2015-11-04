@@ -7,3 +7,5 @@ smoothScroll.init({
   offset: 90,
   speed: 200
 })
+var dropdownToggleSetup = require('./dropDownToggle')
+dropdownToggleSetup()
