@@ -1,9 +1,11 @@
 var $ = require('jquery')
 
-var dropdownToggleSetup = $(document).ready(function() {
-    $('.drop-down').click(function() {
+var dropdownToggleSetup = function() {
+  $(document).ready(function() {
+    $('#nav-bar').find('li').click(function() {
       console.log('helo')
       $('#nav-bar').removeClass('in')
     });
-});
+  });
+};
 module.exports = dropdownToggleSetup
