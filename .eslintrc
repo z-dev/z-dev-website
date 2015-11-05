@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["@jokeyrhyme/es2015"],
+  "ecmaFeatures": {
+  },
+
+  "env": {
+  },
+
+  "globals": {},
+
+  "rules": {
+    semi: [2, "never"]
+  }
+}
