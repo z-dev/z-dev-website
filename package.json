@@ -34,6 +34,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --inline --content-base build",
+    "fix_js": "eslint --fix src/scripts",
     "lint_html": "node_modules/.bin/htmllint build/**/*.html",
     "lint_js": "eslint src/scripts",
     "lint_sass": "node_modules/.bin/sass-lint -c sass-lint.yml -v",
