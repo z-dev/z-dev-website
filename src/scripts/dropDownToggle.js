@@ -1,10 +1,11 @@
-var $ = require('jquery')
+const $ = require('jquery')
 
-var dropdownToggleSetup = function() {
-  $(document).ready(function() {
-    $('#nav-bar').find('li').click(function() {
+const dropdownToggleSetup = () => {
+  $(document).ready(() => {
+    $('#nav-bar').find('li').click(() => {
       $('#nav-bar').removeClass('in')
-    });
-  });
-};
+    })
+  })
+}
+
 module.exports = dropdownToggleSetup
