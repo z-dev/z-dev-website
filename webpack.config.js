@@ -1,4 +1,6 @@
 var path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var Clean = require('clean-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -25,5 +27,14 @@ module.exports = {
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
     ]
-  }
+  },
+
+  plugins: [
+    new CopyWebpackPlugin([
+        // Directory  examples
+        { from: 'src/html', to: '.' },
+        { from: 'src/images', to: './images' },
+    ]),
+    new Clean(['build'])
+  ]
 };
