@@ -1,4 +1,4 @@
-#ZDEV Web ![](https://circleci.com/gh/JohnAGill/z-dev-website.svg?style=shield&circle-token=fc917964d13ac07709fe553fe5035205f749d79c)
+#ZDEV Web [![Circle CI](https://circleci.com/gh/z-dev/z-dev-website.svg?style=svg)](https://circleci.com/gh/z-dev/z-dev-website)
 
 This project has webpack with babel and scss. Bootstrap is imported and variables can be overridden.
 
