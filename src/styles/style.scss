@@ -35,8 +35,8 @@ h2 {
   padding-bottom: 50px;
 }
 .services {
-  background-color: #EEE;
   @extend .section;
+  background-color: #EEE;
 }
 .service-text-glyph-1 {
   float: left;
@@ -66,16 +66,16 @@ h2 {
   padding-top: 20px;
 }
 .team {
-  background-color: #EEE;
   @extend .section;
+  background-color: #EEE;
 }
 .second-services-row {
   padding-top: 30px;
 }
 .headshot {
+  @extend .img-circle;
   height: 150px;
   width: 150px;
-  @extend .img-circle;
 }
 .padding-top-image {
   padding-top: 20px;
@@ -98,9 +98,9 @@ h2 {
   @extend .section;
 }
 img.portfolio-image {
+  @extend .img-responsive;
   padding-top: 20px;
   width: 100%;
-  @extend .img-responsive;
 }
 .portfolio-image-container{
   margin: 20px;
