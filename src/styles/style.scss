@@ -16,6 +16,11 @@ h6 {
   font-weight: normal;
   color: $text-color-headers;
 }
+h5 {
+  font-size: 22.2px;
+  font-weight: normal;
+  color: $text-color-headers;
+}
 h4 {
   font-size: 25.6px;
   font-weight: normal;
@@ -93,6 +98,10 @@ h2 {
 .p-about {
   font-size: 1.4em;
   margin-top: 30px;
+}
+.team-subheading {
+  @extend .text-center;
+  margin-bottom: 40px;
 }
 .portfolio {
   @extend .section;
