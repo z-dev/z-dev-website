@@ -33,13 +33,15 @@ h2 {
   height: $navbar-height;
   margin-left: 10px;
 }
-
-.services {
-  background-color: #EEE;
+.section {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 20px;
   padding-bottom: 50px;
+}
+.services {
+  @extend .section;
+  background-color: #EEE;
 }
 .service-text-glyph-1 {
   float: left;
@@ -67,19 +69,16 @@ h2 {
   margin-top: 50px;
   padding-bottom: 10px;
   padding-top: 20px;
-  background-color: #EEE;
 }
 .team {
-  padding-top: 20px;
+  @extend .section;
+  background-color: #EEE;
 }
 .second-services-row {
   padding-top: 30px;
 }
-.john-face {
-  height: 150px;
-  width: 150px;
-}
-.rich-face {
+.headshot {
+  @extend .img-circle;
   height: 150px;
   width: 150px;
 }
@@ -103,4 +102,25 @@ h2 {
 .team-subheading {
   @extend .text-center;
   margin-bottom: 40px;
+}
+.portfolio {
+  @extend .section;
+}
+img.portfolio-image {
+  @extend .img-responsive;
+  padding-top: 20px;
+  width: 100%;
+}
+.portfolio-image-container{
+  margin: 20px;
+}
+img.actfit-app-icon {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 47px;
+}
+@media(min-width: $screen-md-min) {
+  img.actfit-app-icon {
+    padding-top: 70px;
+  }
 }
