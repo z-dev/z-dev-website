@@ -121,6 +121,11 @@ img.portfolio-image {
 .portfolio-image-container{
   margin: 20px;
 }
+@media(min-width: $screen-md-min) {
+  .portfolio-image-container{
+    min-height: 415px;
+  }
+}
 img.actfit-app-icon {
   padding-left: 80px;
   padding-right: 80px;
@@ -129,6 +134,11 @@ img.actfit-app-icon {
 @media(min-width: $screen-md-min) {
   img.actfit-app-icon {
     padding-top: 70px;
+  }
+}
+@media(max-width: $screen-md-min) {
+  .team-member {
+    margin-top: 50px;
   }
 }
 span.inline-glyphicon {
