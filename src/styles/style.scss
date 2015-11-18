@@ -43,11 +43,16 @@ h2 {
   @extend .section;
   background-color: #EEE;
 }
-.service-text-glyph-1 {
+.service-text-glyph {
   float: left;
   font-size: 30px;
   color: $zdev-primary-color;
-  margin-top: 10px;
+  margin-top: 17px;
+}
+.service-text-ion {
+  @extend .service-text-glyph;
+  font-size: 40px;
+  padding-left: 4px;
 }
 .service-text {
   margin-left: 50px;
@@ -66,16 +71,18 @@ h2 {
   padding-bottom: 110px;
 }
 .contact-info {
-  margin-top: 50px;
   padding-bottom: 10px;
   padding-top: 20px;
 }
 .team {
   @extend .section;
-  background-color: #EEE;
+    background-color: #EEE;
 }
 .second-services-row {
   padding-top: 30px;
+}
+.service-item {
+  min-height: 100px;
 }
 .headshot {
   @extend .img-circle;
@@ -96,7 +103,7 @@ h2 {
   padding-top: 110px;
 }
 .p-about {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-top: 30px;
 }
 .team-subheading {
@@ -123,4 +130,15 @@ img.actfit-app-icon {
   img.actfit-app-icon {
     padding-top: 70px;
   }
+}
+span.inline-glyphicon {
+  color: $zdev-primary-color;
+  top: 3px;
+}
+span.about {
+  font-weight: 400;
+  color: $zdev-primary-color;
+}
+h2.team {
+  padding-bottom: 15px;
 }
