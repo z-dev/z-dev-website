@@ -106,10 +106,6 @@ h2 {
   font-size: 1.2em;
   margin-top: 30px;
 }
-.team-subheading {
-  @extend .text-center;
-  margin-bottom: 40px;
-}
 .portfolio {
   @extend .section;
 }
@@ -144,10 +140,6 @@ img.actfit-app-icon {
 span.inline-glyphicon {
   color: $zdev-primary-color;
   top: 3px;
-}
-span.about {
-  font-weight: 400;
-  color: $zdev-primary-color;
 }
 h2.team {
   padding-bottom: 15px;
