@@ -73,8 +73,12 @@ h2 {
 .contact-info {
   padding-bottom: 10px;
   padding-top: 20px;
+  background-color: #EEE;
 }
 .team {
+  @extend .section;
+}
+.techstack {
   @extend .section;
   background-color: #EEE;
 }
@@ -102,10 +106,15 @@ h2 {
 .row-padding-about {
   padding-top: 110px;
 }
-.p-about {
+.headline-p {
   font-size: 1.2em;
   margin-top: 30px;
 }
+
+.padding-p {
+  margin-top: 20px;
+}
+
 .portfolio {
   @extend .section;
 }
