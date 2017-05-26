@@ -60,12 +60,11 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool sourcemaps --progress --colors --hot --inline --content-base build",
     "upgrade": "yarn upgrade-interactive",
     "deploy": "yarn run build && firebase deploy --token \"<TOKEN>\"",
     "test": "yarn check && npm run lint",
-    "start": "webpack-dev-server",
-    "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
-    "build": "cross-env NODE_ENV=production webpack --env.prod=true",
     "lint": "yarn lint:js && yarn lint:sass",
     "lint:without:prettier": "yarn lint:js:without:prettier && yarn lint:sass",
     "lint:watch": "nodemon --watch src --exec \"yarn lint:without:prettier\"",
