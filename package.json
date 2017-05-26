@@ -6,6 +6,9 @@
     "babel-runtime": "^6.23.0",
     "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "r-dom": "^2.3.2",
     "react": "^15.5.4",
@@ -16,7 +19,8 @@
     "redux": "^3.6.0",
     "redux-freeze": "^0.1.5",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "smooth-scroll": "^0.1.4"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -56,16 +60,22 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "build": "webpack",
-    "check:node": "check-node-version --node \">=7.6.0 <8\"",
-    "dev": "webpack-dev-server --devtool sourcemaps --progress --colors --hot --inline --content-base build",
-    "fix_js": "eslint --fix src/scripts",
-    "lint_html": "node_modules/.bin/htmllint build/**/*.html",
-    "lint_js": "eslint src/scripts",
-    "lint_sass": "node_modules/.bin/sass-lint -c sass-lint.yml -v",
-    "lint": "npm run lint_html && npm run lint_sass && npm run lint_js",
-    "test": "npm run lint",
-    "deploy": "npm run build && firebase deploy"
+    "upgrade": "yarn upgrade-interactive",
+    "deploy": "yarn run build && firebase deploy --token \"<TOKEN>\"",
+    "test": "yarn check && npm run lint",
+    "start": "webpack-dev-server",
+    "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
+    "build": "cross-env NODE_ENV=production webpack --env.prod=true",
+    "lint": "yarn lint:js && yarn lint:sass",
+    "lint:without:prettier": "yarn lint:js:without:prettier && yarn lint:sass",
+    "lint:watch": "nodemon --watch src --exec \"yarn lint:without:prettier\"",
+    "lint:js": "eslint ./src",
+    "lint:js:without:prettier": "yarn lint:js -- --rule 'prettier/prettier: 0'",
+    "lint:sass": "stylelint 'src/**/*.*css' --syntax scss",
+    "format:sass": "stylefmt --recursive 'src/**/*.*css'",
+    "format:js": "prettier --single-quote --trailing-comma all --no-semi --print-width 180 --write \"src/**/*.js\"",
+    "precommit": "lint-staged && yarn lint",
+    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
   },
   "lint-staged": {
     "src/**/*.js": [

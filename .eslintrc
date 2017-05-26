@@ -1,13 +1,17 @@
 {
   "parser": "babel-eslint",
-  "extends": ["@jokeyrhyme/es2015"],
+  "extends": ["eslint-config-airbnb"],
   "ecmaFeatures": {
   },
 
   "env": {
+    "browser": true,
+    "node": true
   },
 
-  "globals": {},
+  "globals": {
+    "document" : false
+  },
 
   "rules": {
     semi: [2, "never"]

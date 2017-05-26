@@ -1,15 +1,11 @@
-// This puts a <style> tag in <head> of page with transpiled css.
-require('../styles/main.scss')
+import smoothScroll from 'smooth-scroll'
+// eslint-disable-next-line
+import 'imports?jQuery=jquery!bootstrap-sass'
+import dropdownToggleSetup from './dropDownToggle'
+import '../styles/main.scss'
 
-// Import bootstrap (which requires jQuery)
-require('imports?jQuery=jquery!bootstrap-sass')
-
-const smoothScroll = require('smooth-scroll')
 smoothScroll.init({
   offset: 90,
-  speed: 200
+  speed: 200,
 })
-
-const dropdownToggleSetup = require('./dropDownToggle')
 dropdownToggleSetup()
-
