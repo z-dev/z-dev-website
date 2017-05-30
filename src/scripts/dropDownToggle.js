@@ -1,11 +1,9 @@
-const $ = require('jquery')
+import $ from 'jquery'
 
-const dropdownToggleSetup = () => {
+export default () => {
   $(document).ready(() => {
     $('#nav-bar').find('li').click(() => {
       $('#nav-bar').removeClass('in')
     })
   })
 }
-
-module.exports = dropdownToggleSetup
