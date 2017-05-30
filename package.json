@@ -7,6 +7,7 @@
     "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
+    "next": "^2.4.0",
     "r-dom": "^2.3.2",
     "react": "^15.5.4",
     "react-addons-shallow-compare": "^15.5.2",
@@ -58,7 +59,7 @@
   "scripts": {
     "build": "webpack",
     "check:node": "check-node-version --node \">=7.6.0 <8\"",
-    "dev": "webpack-dev-server --devtool sourcemaps --progress --colors --hot --inline --content-base build",
+    "dev": "next src",
     "fix_js": "eslint --fix src/scripts",
     "lint_html": "node_modules/.bin/htmllint build/**/*.html",
     "lint_js": "eslint src/scripts",
