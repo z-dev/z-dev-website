@@ -2,8 +2,9 @@ import React from 'react'
 
 import stylesheet from 'styles/index.scss'
 
-export default () =>
+export default () => (
   <div>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     <p>ciao</p>
   </div>
+)
