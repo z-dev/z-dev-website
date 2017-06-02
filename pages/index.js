@@ -31,7 +31,7 @@ export default () => (
                 </div> {/* /col-xs-12 */}
               </div>
               <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
-                <h3>Website and App Developers and Rude Bois</h3>
+                <h3>Website and App Developers</h3>
                 <div className="hire-us">
                   <a className="btn-primary btn-lg" href="#contact" data-scroll="true">Tell us about your project</a>
                 </div>
