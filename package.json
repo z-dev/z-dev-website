@@ -8,7 +8,7 @@
     "dev": "bin/buildStatic.sh && next dev",
     "build": "bin/buildStatic.sh && next build",
     "start": "next start",
-    "deploy:dev": "bin/buildStatic.sh && now --name=z-dev-server-dev --alias z-dev-site-dev",
+    "deploy:dev": "bin/buildStatic.sh && now --name=z-dev-server-dev --alias z-dev-site-development",
     "deploy:prod": "bin/buildStatic.sh && now --name=z-dev-server-prod --alias z-dev.io",
     "deploy:ci:dev": "yarn deploy:dev -- --token=CeRSRknwt4kCcA1pEL32mVNV",
     "deploy:ci:prod": "yarn deploy:prod -- --token=CeRSRknwt4kCcA1pEL32mVNV",
