@@ -11,9 +11,10 @@ options:
   # output-file: 'linters/sass-lint.html'
 # File Options
 files:
-  include: 'src/styles/**/*.s+(a|c)ss'
+  include: 'styles/**/*.s+(a|c)ss'
   ignore:
     - 'node_modules/**/*.*'
+    - 'src/styles/bootstrap/_bootstrap.scss'
 # Rule Configuration
 rules:
   extends-before-mixins: 2

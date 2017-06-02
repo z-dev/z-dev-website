@@ -1,5 +1,4 @@
+.next
 node_modules
-**/*/.DS_Store
-npm-debug.log
-build
-.DS_Store
+*.log
+static

@@ -5,7 +5,7 @@
  */
 
 //This is needed to load the fonts first: https://github.com/jtangelder/sass-loader/issues/40
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$icon-font-path: "/static/bootstrap-sass/assets/fonts/bootstrap/";
 
 //Our own style variables
 @import "./variable_overrides";

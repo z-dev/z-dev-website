@@ -1,5 +1,6 @@
-$ionicons-font-path: "~ionicons-pre/fonts";
-@import "~ionicons-pre/scss/ionicons-variables";
+@import "static/ionicons-scss/ionicons-variables";
+$ionicons-font-path: "static/ionicons-fonts";
+
 /*!
   Ionicons, v#{$ionicons-version}
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -12,5 +13,5 @@ $ionicons-font-path: "~ionicons-pre/fonts";
   Modified icons to fit ionicon’s grid from original.
 */
 
-@import "~ionicons-pre/scss/ionicons-font";
-@import "~ionicons-pre/scss/ionicons-icons";
+@import "static/ionicons-scss/ionicons-font";
+@import "static/ionicons-scss/ionicons-icons";
