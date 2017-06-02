@@ -1,13 +1,17 @@
-#ZDEV Web [![Circle CI](https://circleci.com/gh/z-dev/z-dev-website.svg?style=svg)](https://circleci.com/gh/z-dev/z-dev-website)
+# Z-Dev Website built with Next
 
-This project has webpack with babel and scss. Bootstrap is imported and variables can be overridden.
+## Setup
 
-## Commands
+  - Latest version of node. (NVM)
+  - npm install
+  - npm install yarn
+  - yarn install
 
-Start with `npm install`
+To run the site at localhost:3000 in development mode:
+  - yarn dev
 
-Then you can do:
+To deploy the site:
+  - yarn deploy:ci:dev
+  - yarn deploy:ci:prod
 
-* `npm run build` to generate code into `build` folder
-* `npm run dev` to run a watching dev server at [http://localhost:8080](http://localhost:8080)
 
