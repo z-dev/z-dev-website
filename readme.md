@@ -2,9 +2,7 @@
 
 ## Setup
 
-- Latest version of node. (NVM)
-
-Run:
+  - Latest version of node. (NVM)
   - npm install
   - npm install yarn
   - yarn install
