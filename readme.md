@@ -2,7 +2,7 @@
 
 ## Setup
 
-  - Latest version of node. (NVM)
+  - Version 7.10 node. (NVM)
   - npm install
   - npm install yarn
   - yarn install
