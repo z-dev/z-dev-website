@@ -7,7 +7,7 @@ export default class Header extends Component {
   }
 
   onResponsiveMenuClick() {
-      this.setState({ collapsed: true })
+    this.setState({ collapsed: true })
   }
 
   render() {
@@ -28,7 +28,9 @@ export default class Header extends Component {
                     <a className="brand" rel="home" data-scroll="true" href="#home" title="ZDev"><img src="/static/logo.svg" alt="ZDev logo" /></a>
                   </div> {/* /navbar-header */}
                   <div id="nav-bar" className={`${this.state.collapsed ? 'collapse' : ''} navbar-collapse`}>
+                    {/* eslint-disable */}
                     <ul className="nav navbar-nav navbar-right navbar-links" onClick={() => this.onResponsiveMenuClick()}>
+                    {/* eslint-enable */}
                       <li><a data-scroll="true" href="#about">About</a></li>
                       <li><a data-scroll="true" href="#services">Services</a></li>
                       <li><a data-scroll="true" href="#our-work">Our Work</a></li>

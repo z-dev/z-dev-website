@@ -16,7 +16,7 @@
     "lint": "yarn lint:js && yarn lint:sass",
     "lint:without:prettier": "yarn lint:js:without:prettier && yarn lint:sass",
     "lint:watch": "nodemon --watch ./ --exec \"yarn lint:without:prettier\"",
-    "lint:js": "eslint ./pages",
+    "lint:js": "eslint ./pages ./scripts ./components",
     "lint:js:without:prettier": "yarn lint:js -- --rule 'prettier/prettier: 0'",
     "lint:sass": "stylelint 'styles/**/*.*css' --syntax scss",
     "format:sass": "stylefmt --recursive 'styles/**/*.*css'",

@@ -5,31 +5,31 @@ import firebase from 'scripts/initialiseFirebase.js'
 export default class Form extends Component {
   constructor() {
     super()
-    this.state = {name : '', email : '', message : ''}
+    this.state = { name: '', email: '', message: '' }
+  }
+  onSendMessageClick() {
+    const timeStamp = moment().format('YYMMDDHHmmss')
+    firebase.database().ref(`/projectQueries`).update({
+      [timeStamp]: {
+        name: this.state.name,
+        email: this.state.email,
+        message: this.state.message,
+      },
+    })
+    this.setState({ name: '', email: '', message: '' })
+    return false
   }
 
   handleNameChange(event) {
-    this.setState({name: event.target.value})
+    this.setState({ name: event.target.value })
   }
 
   handleEmailChange(event) {
-    this.setState({email: event.target.value})
+    this.setState({ email: event.target.value })
   }
 
   handleMessageChange(event) {
-    this.setState({message: event.target.value})
-  }
-
-  onSendMessageClick () {
-    const timeStamp = moment().format("YYMMDDHHmmss")
-    firebase.database().ref(`/projectQueries`).update({
-      [timeStamp] : {
-        name : this.state.name,
-        email: this.state.email,
-        message: this.state.message
-      }
-    })
-    return false
+    this.setState({ message: event.target.value })
   }
 
   render() {
@@ -38,16 +38,16 @@ export default class Form extends Component {
         <div className="row">
           <form>
             <div>
-              <label>Name:</label>
-              <input type="text" onChange={(event) => this.handleNameChange(event)}/>
+              <label htmlFor="name">Name:</label>
+              <input id="name" type="text" value={this.state.name} onChange={event => this.handleNameChange(event)} />
             </div>
             <div>
-              <label>Email:</label>
-              <input type="text" onChange={(event) => this.handleEmailChange(event)}/>
+              <label htmlFor="email">Email:</label>
+              <input id="email" type="text" value={this.state.email} onChange={event => this.handleEmailChange(event)} />
             </div>
             <div>
-              <label>Message:</label>
-              <textarea onChange={(event) => this.handleMessageChange(event)}></textarea>
+              <label htmlFor="message">Message:</label>
+              <textarea id="message" value={this.state.message} onChange={event => this.handleMessageChange(event)} />
             </div>
             <div className="button">
               <button onClick={() => this.onSendMessageClick()}>Send your query</button>
