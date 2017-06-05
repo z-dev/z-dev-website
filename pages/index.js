@@ -23,13 +23,13 @@ export default () => (
         <div className="container">
           <div className="row">
             <div className="col-xs-12 block">
-              <div className="row row-padding-about">
-                <div className="col-xs-12 hidden-xs hidden-sm col-md-4 col-md-offset-4 logo-image">
-                  <ScrollableAnchor id={'about'}>
+              <ScrollableAnchor id={'about'}>
+                <div className="row row-padding-about">
+                  <div className="col-xs-12 hidden-xs hidden-sm col-md-4 col-md-offset-4 logo-image">
                     <img src="/static/logo.svg" alt="ZDev logo" />
-                  </ScrollableAnchor>
-                </div> {/* /col-xs-12 */}
-              </div>
+                  </div> {/* /col-xs-12 */}
+                </div>
+              </ScrollableAnchor>
               <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
                 <h3>Website and App Developers</h3>
                 <div className="hire-us">
