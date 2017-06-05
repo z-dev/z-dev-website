@@ -10,7 +10,6 @@ export default class Header extends Component {
       this.setState({ collapsed: true })
   }
 
-
   render() {
     return (
       <div>

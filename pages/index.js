@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Header from 'components/header.js'
+import Form from 'components/projectQueryForm.js'
 import stylesheet from 'styles/index.scss'
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor'
 
@@ -35,6 +36,7 @@ export default () => (
                 <div className="hire-us">
                   <a className="btn-primary btn-lg" href="#contact" data-scroll="true">Tell us about your project</a>
                 </div>
+                <Form />
               </div> {/* /col-xs-12 */}
             </div> {/* /col-xs-12 block */}
           </div> {/* /row */}
