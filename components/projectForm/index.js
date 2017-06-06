@@ -21,6 +21,7 @@ export default class ProjectForm extends Component {
             </div>
             <div className="button">
               <button
+                type="button"
                 onClick={() =>
                   this.props.onSendMessageClick({
                     userName: this.props.name,

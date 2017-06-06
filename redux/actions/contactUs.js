@@ -15,6 +15,6 @@ export const handleMessageChange = (inputValue) => {
 }
 export const onSendMessageClick = (messageData) => {
   const timeStamp = moment().format('YYMMDDHHmmss')
-  firebase.database().ref(`/projectQueries`).push({...messageData, timeStamp: [timeStamp]})
+  firebase.database().ref(`/projectQueries`).push({...messageData, timeStamp: timeStamp})
   return {type: 'contactUs/HANDLE_SEND_MESSAGE_CLICK'}
 }
