@@ -9,12 +9,11 @@ export default class Form extends Component {
   }
   onSendMessageClick() {
     const timeStamp = moment().format('YYMMDDHHmmss')
-    firebase.database().ref(`/projectQueries`).update({
-      [timeStamp]: {
-        name: this.state.name,
-        email: this.state.email,
-        message: this.state.message,
-      },
+    firebase.database().ref(`/projectQueries`).push({
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message,
+      timeStamp: [timeStamp],
     })
     this.setState({ name: '', email: '', message: '' })
     return false

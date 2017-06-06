@@ -1,15 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Header extends Component {
-  constructor() {
-    super()
-    this.state = { collapsed: true }
-  }
-
-  onResponsiveMenuClick() {
-    this.setState({ collapsed: true })
-  }
-
+export default class Header extends React.Component {
   render() {
     return (
       <div>
@@ -19,7 +10,7 @@ export default class Header extends Component {
               <nav className="navbar navbar-default navbar-fixed-top">
                 <div className="container-fluid">
                   <div className="navbar-header">
-                    <button type="button" onClick={() => this.setState({ collapsed: !this.state.collapsed })} className="navbar-toggle collapsed">
+                    <button type="button" onClick={() => this.props.toggleResponsiveMenu()} className="navbar-toggle collapsed">
                       <span className="sr-only">Toggle navigation</span>
                       <span className="icon-bar" />
                       <span className="icon-bar" />
@@ -27,9 +18,9 @@ export default class Header extends Component {
                     </button>
                     <a className="brand" rel="home" data-scroll="true" href="#home" title="ZDev"><img src="/static/logo.svg" alt="ZDev logo" /></a>
                   </div> {/* /navbar-header */}
-                  <div id="nav-bar" className={`${this.state.collapsed ? 'collapse' : ''} navbar-collapse`}>
+                  <div id="nav-bar" className={`${this.props.menuCollapsed ? 'collapse' : ''} navbar-collapse`}>
                     {/* eslint-disable */}
-                    <ul className="nav navbar-nav navbar-right navbar-links" onClick={() => this.onResponsiveMenuClick()}>
+                    <ul className="nav navbar-nav navbar-right navbar-links" onClick={() => this.props.onResponsiveMenuClick()}>
                     {/* eslint-enable */}
                       <li><a data-scroll="true" href="#about">About</a></li>
                       <li><a data-scroll="true" href="#services">Services</a></li>
