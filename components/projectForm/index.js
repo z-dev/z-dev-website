@@ -22,12 +22,14 @@ export default class ProjectForm extends Component {
             <div className="button">
               <button
                 onClick={() =>
-                this.props.onSendMessageClick({
-                  userName: this.props.name,
-                  userEmail: this.props.email,
-                  userMessage: this.props.message,
-                })}
-              >Send your query</button>
+                  this.props.onSendMessageClick({
+                    userName: this.props.name,
+                    userEmail: this.props.email,
+                    userMessage: this.props.message,
+                  })}
+              >
+                Send your query
+              </button>
             </div>
           </form>
         </div>
