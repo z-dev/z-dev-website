@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux'
-import Header from './reducers/header.js'
-import ContactUs from './reducers/contactUs.js'
-
+import header from './reducers/header.js'
+import contactUs from './reducers/contactUs.js'
 
 const rootReducer = combineReducers({
-  Header,
-  ContactUs
+  header,
+  contactUs
 })
 
 export default rootReducer

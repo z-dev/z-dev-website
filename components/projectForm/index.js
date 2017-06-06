@@ -1,33 +1,7 @@
 import React, { Component } from 'react'
-import moment from 'moment'
-import firebase from 'scripts/initialiseFirebase.js'
 import Div from 'components/core/Div.js'
 
 export default class ProjectForm extends Component {
-  onSendMessageClick() {
-    const timeStamp = moment().format('YYMMDDHHmmss')
-    firebase.database().ref(`/projectQueries`).push({
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message,
-      timeStamp: [timeStamp],
-    })
-    this.setState({ name: '', email: '', message: '' })
-    return false
-  }
-
-  handleNameChange(event) {
-    this.setState({ name: event.target.value })
-  }
-
-  handleEmailChange(event) {
-    this.setState({ email: event.target.value })
-  }
-
-  handleMessageChange(event) {
-    this.setState({ message: event.target.value })
-  }
-
   render(props) {
     return (
       <Div className="container" {...props}>
@@ -46,7 +20,14 @@ export default class ProjectForm extends Component {
               <textarea id="message" value={this.props.message} onChange={event => this.props.handleMessageChange(event.target.value)} />
             </div>
             <div className="button">
-              <button onClick={() => this.props.onSendMessageClick()}>Send your query</button>
+              <button
+                onClick={() =>
+                this.props.onSendMessageClick({
+                  userName: this.props.name,
+                  userEmail: this.props.email,
+                  userMessage: this.props.message,
+                })}
+              >Send your query</button>
             </div>
           </form>
         </div>

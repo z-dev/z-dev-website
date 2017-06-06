@@ -1,14 +1,12 @@
 import React from 'react'
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor'
 import Header from 'components/header'
 import Form from 'components/projectForm'
 import Head from 'next/head'
 import stylesheet from 'styles/index.scss'
-import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor'
 import { toggleResponsiveMenu, onResponsiveMenuClick } from 'redux/actions/header.js'
-import { handleNameChange, handleEmailChange, handleMessageChange } from 'redux/actions/contactUs.js'
-
+import { handleNameChange, handleEmailChange, handleMessageChange, onSendMessageClick } from 'redux/actions/contactUs.js'
 import connect from 'common/reduxConnect'
-import headerSelector from 'redux/selectors/header'
 
 configureAnchors({ offset: -120, scrollDuration: 200 })
 
@@ -51,6 +49,10 @@ class Index extends React.Component {
                       handleNameChange={inputValue => this.props.dispatch(handleNameChange(inputValue))}
                       handleEmailChange={inputValue => this.props.dispatch(handleEmailChange(inputValue))}
                       handleMessageChange={inputValue => this.props.dispatch(handleMessageChange(inputValue))}
+                      onSendMessageClick={messageData => this.props.dispatch(onSendMessageClick(messageData))}
+                      name={this.props.contactUs.userName}
+                      email={this.props.contactUs.userEmail}
+                      message={this.props.contactUs.userMessage}
                     />
                   </div> {/* /col-xs-12 */}
                 </div> {/* /col-xs-12 block */}
@@ -201,4 +203,4 @@ class Index extends React.Component {
   }
 }
 
-export default connect(state => ({ header: headerSelector(state) }))(Index)
+export default connect(state => state)(Index)

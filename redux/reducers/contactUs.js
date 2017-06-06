@@ -14,6 +14,8 @@ export default function contactUs(state = initialState, action) {
       return {...state, userEmail: action.payload}
     case 'contactUs/HANDLE_MESSAGE_CHANGE':
       return {...state, userMessage: action.payload}
+    case 'contactUs/HANDLE_SEND_MESSAGE_CLICK':
+      return {...state, userName: '', userEmail: '', userMessage: ''}
     default:
       return state
   }
