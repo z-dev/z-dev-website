@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import firebase from 'scripts/initialiseFirebase.js'
+import Div from 'components/core/Div.js'
 
-export default class Form extends Component {
-  constructor() {
-    super()
-    this.state = { name: '', email: '', message: '' }
-  }
+export default class ProjectForm extends Component {
   onSendMessageClick() {
     const timeStamp = moment().format('YYMMDDHHmmss')
     firebase.database().ref(`/projectQueries`).push({
@@ -31,29 +28,29 @@ export default class Form extends Component {
     this.setState({ message: event.target.value })
   }
 
-  render() {
+  render(props) {
     return (
-      <div className="container">
+      <Div className="container" {...props}>
         <div className="row">
           <form>
             <div>
               <label htmlFor="name">Name:</label>
-              <input id="name" type="text" value={this.state.name} onChange={event => this.handleNameChange(event)} />
+              <input id="name" type="text" value={this.props.name} onChange={event => this.props.handleNameChange(event.target.value)} />
             </div>
             <div>
               <label htmlFor="email">Email:</label>
-              <input id="email" type="text" value={this.state.email} onChange={event => this.handleEmailChange(event)} />
+              <input id="email" type="text" value={this.props.email} onChange={event => this.props.handleEmailChange(event.target.value)} />
             </div>
             <div>
               <label htmlFor="message">Message:</label>
-              <textarea id="message" value={this.state.message} onChange={event => this.handleMessageChange(event)} />
+              <textarea id="message" value={this.props.message} onChange={event => this.props.handleMessageChange(event.target.value)} />
             </div>
             <div className="button">
-              <button onClick={() => this.onSendMessageClick()}>Send your query</button>
+              <button onClick={() => this.props.onSendMessageClick()}>Send your query</button>
             </div>
           </form>
         </div>
-      </div>
+      </Div>
     )
   }
 }

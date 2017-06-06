@@ -2,9 +2,6 @@ import _ from 'lodash'
 
 const initialState = {
   menuCollapsed: true,
-  userName: '',
-  userEmail: '',
-  userMessage: ''
 }
 
 export default function header(state = initialState, action) {

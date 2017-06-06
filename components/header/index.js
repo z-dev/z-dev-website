@@ -1,9 +1,10 @@
 import React from 'react'
+import Div from 'components/core/Div.js'
 
 export default class Header extends React.Component {
-  render() {
+  render(props) {
     return (
-      <div>
+      <Div {...props}>
         <header>
           <div className="container">
             <div className="row">
@@ -38,7 +39,7 @@ export default class Header extends React.Component {
             </div> {/* /row */}
           </div> {/* /container */}
         </header>
-      </div>
+      </Div>
     )
   }
 }

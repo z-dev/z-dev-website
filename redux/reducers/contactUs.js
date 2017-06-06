@@ -1,16 +1,19 @@
 import _ from 'lodash'
 
 const initialState = {
-  responsiveMenuOpen: false,
   userName: '',
   userEmail: '',
   userMessage: ''
 }
 
-export default function app(state = initialState, action) {
+export default function contactUs(state = initialState, action) {
   switch (action.type) {
-    case 'app/TOGGLE_RESPONSIVE_MENU':
-      return {...state, responsiveMenuOpen: !state.responsiveMenuOpen}
+    case 'contactUs/HANDLE_NAME_CHANGE':
+      return {...state, userName: action.payload}
+    case 'contactUs/HANDLE_EMAIL_CHANGE':
+      return {...state, userEmail: action.payload}
+    case 'contactUs/HANDLE_MESSAGE_CHANGE':
+      return {...state, userMessage: action.payload}
     default:
       return state
   }

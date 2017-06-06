@@ -1,9 +1,11 @@
 import React from 'react'
-import Header from 'components/header.js'
+import Header from 'components/header'
+import Form from 'components/projectForm'
+import Head from 'next/head'
 import stylesheet from 'styles/index.scss'
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor'
-import Page from 'components/Page'
 import { toggleResponsiveMenu, onResponsiveMenuClick } from 'redux/actions/header.js'
+import { handleNameChange, handleEmailChange, handleMessageChange } from 'redux/actions/contactUs.js'
 
 import connect from 'common/reduxConnect'
 import headerSelector from 'redux/selectors/header'
@@ -13,8 +15,16 @@ configureAnchors({ offset: -120, scrollDuration: 200 })
 class Index extends React.Component {
   render() {
     return (
-      <Page>
+      <div>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+        <Head>
+          <title>ZDEV Javascript React Native Developers</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900" rel="stylesheet" type="text/css" />
+          <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
+          <meta name="description" content="ZDEV Developers specializing in full-stack Javascript development, React, React Native and Redux" />
+        </Head>
         <div>
           <Header
             menuCollapsed={this.props.header.menuCollapsed}
@@ -37,6 +47,11 @@ class Index extends React.Component {
                     <div className="hire-us">
                       <a className="btn-primary btn-lg" href="#contact" data-scroll="true">Tell us about your project</a>
                     </div>
+                    <Form
+                      handleNameChange={inputValue => this.props.dispatch(handleNameChange(inputValue))}
+                      handleEmailChange={inputValue => this.props.dispatch(handleEmailChange(inputValue))}
+                      handleMessageChange={inputValue => this.props.dispatch(handleMessageChange(inputValue))}
+                    />
                   </div> {/* /col-xs-12 */}
                 </div> {/* /col-xs-12 block */}
               </div> {/* /row */}
@@ -181,7 +196,7 @@ class Index extends React.Component {
             </div> {/* /row */}
           </div>
         </div>
-      </Page>
+      </div>
     )
   }
 }
