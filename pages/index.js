@@ -4,8 +4,8 @@ import Header from 'components/header'
 import Form from 'components/projectForm'
 import Head from 'next/head'
 import stylesheet from 'styles/index.scss'
-import { toggleResponsiveMenu, onResponsiveMenuClick } from 'redux/actions/header.js'
-import { handleNameChange, handleEmailChange, handleMessageChange, onSendMessageClick } from 'redux/actions/contactUs.js'
+import { toggleResponsiveMenu, closeResponsiveMenu } from 'redux/actions/header.js'
+import { updateName, updateEmail, updateMessage, sendMessage } from 'redux/actions/contactUs.js'
 import connect from 'common/reduxConnect'
 
 configureAnchors({ offset: -120, scrollDuration: 200 })
@@ -27,7 +27,7 @@ class Index extends React.Component {
           <Header
             menuCollapsed={this.props.header.menuCollapsed}
             toggleResponsiveMenu={() => this.props.dispatch(toggleResponsiveMenu())}
-            onResponsiveMenuClick={() => this.props.dispatch(onResponsiveMenuClick())}
+            closeResponsiveMenu={() => this.props.dispatch(closeResponsiveMenu())}
           />
           <div className="about-box">
             <div className="container">
@@ -46,10 +46,10 @@ class Index extends React.Component {
                       <a className="btn-primary btn-lg" href="#contact" data-scroll="true">Tell us about your project</a>
                     </div>
                     <Form
-                      handleNameChange={inputValue => this.props.dispatch(handleNameChange(inputValue))}
-                      handleEmailChange={inputValue => this.props.dispatch(handleEmailChange(inputValue))}
-                      handleMessageChange={inputValue => this.props.dispatch(handleMessageChange(inputValue))}
-                      onSendMessageClick={messageData => this.props.dispatch(onSendMessageClick(messageData))}
+                      updateName={inputValue => this.props.dispatch(updateName(inputValue))}
+                      updateEmail={inputValue => this.props.dispatch(updateEmail(inputValue))}
+                      updateMessage={inputValue => this.props.dispatch(updateMessage(inputValue))}
+                      sendMessage={messageData => this.props.dispatch(sendMessage(messageData))}
                       name={this.props.contactUs.userName}
                       email={this.props.contactUs.userEmail}
                       message={this.props.contactUs.userMessage}

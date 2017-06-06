@@ -1,8 +1,8 @@
 export default {
-  apiKey: 'AIzaSyDLndzSTeixO_iayZBeXHbbAoNHlR3-a9w',
-  authDomain: 'zdev-project-query.firebaseapp.com',
-  databaseURL: 'https://zdev-project-query.firebaseio.com',
-  projectId: 'zdev-project-query',
-  storageBucket: 'zdev-project-query.appspot.com',
-  messagingSenderId: '807438005318',
+  apiKey: "AIzaSyBF1kcIyW8vApGXyXPaWD4eCODkxz_Jg7M",
+  authDomain: "z-dev-dev.firebaseapp.com",
+  databaseURL: "https://z-dev-dev.firebaseio.com",
+  projectId: "z-dev-dev",
+  storageBucket: "z-dev-dev.appspot.com",
+  messagingSenderId: "362228169866"
 }

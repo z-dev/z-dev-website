@@ -21,7 +21,7 @@ export default class Header extends React.Component {
                   </div> {/* /navbar-header */}
                   <div id="nav-bar" className={`${this.props.menuCollapsed ? 'collapse' : ''} navbar-collapse`}>
                     {/* eslint-disable */}
-                    <ul className="nav navbar-nav navbar-right navbar-links" onClick={() => this.props.onResponsiveMenuClick()}>
+                    <ul className="nav navbar-nav navbar-right navbar-links" onClick={() => this.props.closeResponsiveMenu()}>
                       {/* eslint-enable */}
                       <li><a data-scroll="true" href="#about">About</a></li>
                       <li><a data-scroll="true" href="#services">Services</a></li>

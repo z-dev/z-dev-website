@@ -2,19 +2,18 @@ import 'common/initialiseFirebase.js'
 import firebase from 'firebase'
 import moment from 'moment'
 
-export const handleNameChange = (inputValue) => {
-  return {type: 'contactUs/HANDLE_NAME_CHANGE', payload: inputValue}
+export const updateName = inputValue => {
+  return { type: 'contactUs/UPDATE_NAME', payload: inputValue }
 }
 
-export const handleEmailChange = (inputValue) => {
-  return {type: 'contactUs/HANDLE_EMAIL_CHANGE', payload: inputValue}
+export const updateEmail = inputValue => {
+  return { type: 'contactUs/UPDATE_EMAIL', payload: inputValue }
 }
 
-export const handleMessageChange = (inputValue) => {
-  return {type: 'contactUs/HANDLE_MESSAGE_CHANGE', payload: inputValue}
+export const updateMessage = inputValue => {
+  return { type: 'contactUs/UPDATE_MESSAGE', payload: inputValue }
 }
-export const onSendMessageClick = (messageData) => {
-  const timeStamp = moment().format('YYMMDDHHmmss')
-  firebase.database().ref(`/projectQueries`).push({...messageData, timeStamp: timeStamp})
-  return {type: 'contactUs/HANDLE_SEND_MESSAGE_CLICK'}
+export const sendMessage = messageData => {
+  firebase.database().ref(`/projectQueries`).push({ ...messageData, timeStamp: moment().format('YYMMDDHHmmss') })
+  return { type: 'contactUs/SEND_MESSAGE' }
 }

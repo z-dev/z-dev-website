@@ -4,7 +4,7 @@ import contactUs from './reducers/contactUs.js'
 
 const rootReducer = combineReducers({
   header,
-  contactUs
+  contactUs,
 })
 
 export default rootReducer
