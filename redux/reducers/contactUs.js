@@ -13,7 +13,7 @@ export default function contactUs(state = initialState, action) {
     case 'contactUs/UPDATE_MESSAGE':
       return { ...state, userMessage: action.payload }
     case 'contactUs/SEND_MESSAGE':
-      return { ...state, userName: '', userEmail: '', userMessage: '' }
+      return { ...state, ...initialState }
     default:
       return state
   }
