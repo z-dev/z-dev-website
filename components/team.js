@@ -2,6 +2,7 @@ import React from 'react'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import Div from 'components/core/div'
 import Text from 'components/core/text'
+import { IoniconLink } from 'components/core/ionicons'
 import { H2, H4 } from 'components/core/headerText'
 import styled from 'styled-components'
 
@@ -50,9 +51,7 @@ const TeamMember = props => {
       <HeadShotImage src={props.image} alt={props.name} />
       <H4>{props.name}</H4>
       <TeamMemberDescription>{props.description}</TeamMemberDescription>
-      <a href={props.linkedInProfile}>
-        <span className="contact-icon ion-social-linkedin" />
-      </a>
+      <IoniconLink url={props.linkedInProfile} icon="ion-social-linkedin" />
     </TeamMemberContainer>
   )
 }

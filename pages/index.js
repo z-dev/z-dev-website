@@ -1,8 +1,9 @@
 import React from 'react'
-import Header from 'components/header.js'
-import ContactFooter from 'components/contactFooter.js'
-import Team from 'components/team.js'
-import Page from 'components/page.js'
+import Header from 'components/header'
+import ContactFooter from 'components/contactFooter'
+import TechStack from 'components/techStack'
+import Team from 'components/team'
+import Page from 'components/page'
 import stylesheet from 'styles/index.scss'
 import { configureAnchors } from 'react-scrollable-anchor'
 import ScrollableAnchor from 'components/scrollableAnchor'
@@ -119,19 +120,7 @@ export default () =>
         </div>
       </div>
       <ScrollableAnchor id={'techstack'} />
-
-      <div className="techstack">
-        <div className="container">
-          <div className="row">
-            <h2 className="text-center">Tech Stack</h2>
-            <div className="col-xs-12 col-sm-12 col-md-12 text-center">
-              <h5>We‘re Fullstack Javascript Developers.</h5>
-              <p className="headline-p">We <span className="glyphicon glyphicon-heart inline-glyphicon" /> React, React-Native, Redux, Node and Firebase.</p>
-              <p className="padding-p">See our <a href="https://github.com/z-dev/">Github</a> for an example of how we build things.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TechStack />
       <ScrollableAnchor id={'team'} />
       <Team />
       <ScrollableAnchor id={'contact'} />
