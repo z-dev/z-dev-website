@@ -44,27 +44,37 @@ const TeamMembersContainer = Div.extend`
   justify-content: center;
 `
 
-const TeamMember = (props) => {
-  return <TeamMemberContainer>
-    <HeadShotImage src={props.image} alt={props.name} />
-    <H4>{props.name}</H4>
-    <TeamMemberDescription>{props.description}</TeamMemberDescription>
-    <a href={props.linkedInProfile}>
-      <span className="contact-icon ion-social-linkedin" />
-    </a>
-  </TeamMemberContainer>
+const TeamMember = props => {
+  return (
+    <TeamMemberContainer>
+      <HeadShotImage src={props.image} alt={props.name} />
+      <H4>{props.name}</H4>
+      <TeamMemberDescription>{props.description}</TeamMemberDescription>
+      <a href={props.linkedInProfile}>
+        <span className="contact-icon ion-social-linkedin" />
+      </a>
+    </TeamMemberContainer>
+  )
 }
 
 export default () =>
   <Container>
     <Header>The Team</Header>
     <TeamMembersContainer>
-      <TeamMember name="Richard" image="/static/Richheadshot.jpg" linkedInProfile="https://www.linkedin.com/in/richardgill3" description="Richard has a decade of experience ranging from Investment Banks to Start Ups. He enjoys learning new technologies and helping people solve real business problems." />
-      <TeamMember name="John" image="/static/john_headshot.jpg" linkedInProfile="https://uk.linkedin.com/in/johnagill1" description="John specializes in frontend development. He‘s got a keen eye for detail and loves building great applications." />
+      <TeamMember
+        name="Richard"
+        image="/static/Richheadshot.jpg"
+        linkedInProfile="https://www.linkedin.com/in/richardgill3"
+        description="Richard has a decade of experience ranging from Investment Banks to Start Ups. He enjoys learning new technologies and helping people solve real business problems."
+      />
+      <TeamMember
+        name="John"
+        image="/static/john_headshot.jpg"
+        linkedInProfile="https://uk.linkedin.com/in/johnagill1"
+        description="John specializes in frontend development. He‘s got a keen eye for detail and loves building great applications."
+      />
     </TeamMembersContainer>
   </Container>
-
-
 
 // <div className="team">
 //   <div className="container">
