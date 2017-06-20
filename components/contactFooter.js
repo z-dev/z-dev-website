@@ -1,9 +1,7 @@
 import React from 'react'
-import ScrollableAnchor from 'react-scrollable-anchor'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import Div from 'components/core/div'
 import Link from 'components/core/link'
-import Text from 'components/core/text'
 import { H5 } from 'components/core/headerText'
 import styled from 'styled-components'
 
@@ -48,7 +46,6 @@ const ContactLink = Link.extend`
 
 export default () =>
   <Container>
-    <ScrollableAnchor id={'contact'}><Text /></ScrollableAnchor>
     <ContactContainer>
       <H5>Location</H5>
       <ContactInnerContainer>
