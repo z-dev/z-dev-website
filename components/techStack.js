@@ -30,7 +30,7 @@ const Tagline = H5.extend`
 
 const TechStackContainer = Div.extend`
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 `
 
 const Headline = Text.extend`
@@ -52,6 +52,7 @@ const LogosContainer = Div.extend`
   justify-content: center;
   margin-top: 5px;
   flex-wrap: wrap;
+  max-width: 1000px;
 `
 
 export default () =>
@@ -63,12 +64,13 @@ export default () =>
       <LogosContainer>
         <Logo logo="node.svg" />
         <Logo logo="npm.svg" />
-        <Logo logo="react.png" />
-        <Logo logo="reactNative.png" style={{ height: 40 }} />
+        <Logo logo="react.svg" />
+        <Logo logo="reactNative.svg" />
         <Logo logo="redux.png" />
         <Logo logo="firebase.png" />
         <Logo logo="next.png" />
-        <Logo logo="webpack.jpg" />
+        <Logo logo="webpack.png" />
+        <Logo logo="docker.png" />
       </LogosContainer>
       <Headline>
         See our <Link href="https://github.com/z-dev/code-portfolio/blob/master/readme.md">code portfolio <Ionicon className="ion-social-github" /></Link> for examples of how we
