@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from 'components/header.js'
 import ContactFooter from 'components/contactFooter.js'
+import Team from 'components/team.js'
 import Page from 'components/page.js'
 import stylesheet from 'styles/index.scss'
 import { configureAnchors } from 'react-scrollable-anchor'
@@ -132,31 +133,7 @@ export default () =>
         </div>
       </div>
       <ScrollableAnchor id={'team'} />
-      <div className="team">
-        <div className="container">
-          <div className="row">
-            <h2 className="text-center team">The Team</h2>
-            <div className="col-xs-12 col-sm-12 col-md-6 text-center">
-              <img src="/static/Richheadshot.jpg" className="headshot" alt="Richard" />
-              <h4 className="padding-top-image">Richard</h4>
-              <p>
-                Richard has a decade of experience ranging from Investment Banks to Start Ups. He enjoys learning new technologies and helping people solve real business problems.
-              </p>
-              <a href="https://www.linkedin.com/in/richardgill3">
-                <span className="contact-icon ion-social-linkedin" />
-              </a>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 text-center team-member">
-              <img src="/static/john_headshot.jpg" className="headshot" alt="John" />
-              <h4 className="padding-top-image">John</h4>
-              <p>John specializes in frontend development. He‘s got a keen eye for detail and loves building great applications.</p>
-              <a href="https://uk.linkedin.com/in/johnagill1">
-                <span className="contact-icon ion-social-linkedin" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Team />
       <ScrollableAnchor id={'contact'} />
       <ContactFooter />
     </div>
