@@ -47,3 +47,5 @@ rules:
   react/prefer-stateless-function: 0
   jsx-a11y/img-has-alt: 0
   prettier/prettier: ["error", {"trailingComma": "all", "singleQuote": true, "semi": false, "printWidth": 180 }]
+  jsx-a11y/no-static-element-interactions: 0
+  jsx-a11y/html-has-lang: 0

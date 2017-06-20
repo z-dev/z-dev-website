@@ -1,22 +1,15 @@
 import React from 'react'
-import Head from 'next/head'
 import Header from 'components/header.js'
+import ContactFooter from 'components/contactFooter.js'
+import Page from 'components/page.js'
 import stylesheet from 'styles/index.scss'
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor'
 
 configureAnchors({ offset: -120, scrollDuration: 200 })
 
-export default () => (
-  <div>
+export default () =>
+  <Page>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-    <Head>
-      <title>ZDEV Javascript React Native Developers</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900" rel="stylesheet" type="text/css" />
-      <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
-      <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
-      <meta name="description" content="ZDEV Developers specializing in full-stack Javascript development, React, React Native and Redux" />
-    </Head>
     <div>
       <Header />
       <div className="about-box">
@@ -27,7 +20,8 @@ export default () => (
                 <div className="row row-padding-about">
                   <div className="col-xs-12 hidden-xs hidden-sm col-md-4 col-md-offset-4 logo-image">
                     <img src="/static/logo.svg" alt="ZDev logo" />
-                  </div> {/* /col-xs-12 */}
+                  </div>{' '}
+                  {/* /col-xs-12 */}
                 </div>
               </ScrollableAnchor>
               <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
@@ -35,11 +29,16 @@ export default () => (
                 <div className="hire-us">
                   <a className="btn-primary btn-lg" href="#contact" data-scroll="true">Tell us about your project</a>
                 </div>
-              </div> {/* /col-xs-12 */}
-            </div> {/* /col-xs-12 block */}
-          </div> {/* /row */}
-        </div> {/* /container */}
-      </div> {/* /about-box */}
+              </div>{' '}
+              {/* /col-xs-12 */}
+            </div>{' '}
+            {/* /col-xs-12 block */}
+          </div>{' '}
+          {/* /row */}
+        </div>{' '}
+        {/* /container */}
+      </div>{' '}
+      {/* /about-box */}
       <div className="services container-fluid">
         <ScrollableAnchor id={'services'}>
           <h2 className="text-center">Services</h2>
@@ -51,28 +50,32 @@ export default () => (
               <div className="service-text">
                 <h6>Strategy</h6>
                 <p>Advice with a tech perspective</p>
-              </div> {/* /service-text */}
+              </div>{' '}
+              {/* /service-text */}
             </div>
             <div className="col-xs-12 col-sm-6 col-md-4 service-item">
               <span className="glyphicon glyphicon-phone service-text-glyph" />
               <div className="service-text">
                 <h6>Frontends</h6>
                 <p>We <span className="glyphicon glyphicon-heart inline-glyphicon" /> building great websites and apps</p>
-              </div> {/* /service-text */}
+              </div>{' '}
+              {/* /service-text */}
             </div>
             <div className="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 service-item">
               <span className="glyphicon glyphicon-hdd service-text-glyph" />
               <div className="service-text">
                 <h6>Backends</h6>
                 <p>We build whole products, from front to back</p>
-              </div> {/* /service-text */}
+              </div>{' '}
+              {/* /service-text */}
             </div>
             <div className="col-xs-12 col-sm-6 col-md-4 service-item">
               <span className="glyphicon glyphicon-cloud service-text-glyph" />
               <div className="service-text">
                 <h6>DevOps</h6>
                 <p>Ship your product more often, with less issues</p>
-              </div> {/* /service-text */}
+              </div>{' '}
+              {/* /service-text */}
             </div>
           </div>
         </div>
@@ -156,28 +159,6 @@ export default () => (
           </div>
         </div>
       </div>
-      <div className="contact-info container-fluid text-center block">
-        <div className="row">
-          <div className="col-xs-12 col-sm-4">
-            <ScrollableAnchor id={'contact'}>
-              <h6>Location</h6>
-            </ScrollableAnchor>
-            <p>Central London</p>
-          </div>
-          <div className="col-xs-12 col-sm-4 margin-top-xs-40">
-            <h6>Email</h6>
-            <p><a href="mailto:info@z-dev.io">info@z-dev.io</a></p>
-          </div>
-          <div className="col-xs-12 col-sm-4 margin-top-xs-40">
-            <h6>LinkedIn</h6>
-            <p>
-              <a href="https://www.linkedin.com/company/zdev-limited">
-                <span className="contact-icon ion-social-linkedin" />
-              </a>
-            </p>
-          </div>
-        </div> {/* /row */}
-      </div>
+      <ContactFooter />
     </div>
-  </div>
-)
+  </Page>

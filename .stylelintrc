@@ -1,5 +1,6 @@
 {
   "extends": "stylelint-config-standard",
+  "processors": ["stylelint-processor-styled-components"],
   "rules": {
     "declaration-block-no-redundant-longhand-properties": [true, {
       "ignoreShorthands": ["/.*/"]

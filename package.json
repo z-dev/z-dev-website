@@ -3,32 +3,32 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "check:node": "check-node-version --node \">=7.6.0 <8\"",
-    "test": "yarn check && npm run lint",
+    "check:node": "check-node-version --node \">=8.1 <9\"",
+    "test": "npm run lint",
     "dev": "bin/buildStatic.sh && next dev",
     "build": "bin/buildStatic.sh && next build",
     "start": "next start",
-    "deploy:dev": "bin/buildStatic.sh && now --name=z-dev-server-dev --alias z-dev-site-dev",
-    "deploy:prod": "bin/buildStatic.sh && now --name=z-dev-server-prod --alias z-dev.io",
-    "deploy:ci:dev": "yarn deploy:dev -- --token=CeRSRknwt4kCcA1pEL32mVNV",
-    "deploy:ci:prod": "yarn deploy:prod -- --token=CeRSRknwt4kCcA1pEL32mVNV",
-    "postinstall": "yarn check:node",
-    "lint": "yarn lint:js && yarn lint:sass",
-    "lint:without:prettier": "yarn lint:js:without:prettier && yarn lint:sass",
-    "lint:watch": "nodemon --watch ./ --exec \"yarn lint:without:prettier\"",
-    "lint:js": "eslint ./pages",
-    "lint:js:without:prettier": "yarn lint:js -- --rule 'prettier/prettier: 0'",
-    "lint:sass": "stylelint 'styles/**/*.*css' --syntax scss",
+    "deploy:dev": "bin/buildStatic.sh && now --name=z-dev-site-dev --alias z-dev-site-dev",
+    "deploy:prod": "bin/buildStatic.sh && now --name=z-dev-site-prod --alias z-dev.io",
+    "deploy:ci:dev": "npm run deploy:dev -- --token=CeRSRknwt4kCcA1pEL32mVNV",
+    "deploy:ci:prod": "npm run deploy:prod -- --token=CeRSRknwt4kCcA1pEL32mVNV",
+    "postinstall": "npm run check:node",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:without:prettier": "npm run lint:js:without:prettier && npm run lint:sass",
+    "lint:watch": "nodemon --watch ./ --exec \"npm run lint:without:prettier\"",
+    "lint:js": "eslint ./pages ./components ./styles",
+    "lint:js:without:prettier": "npm run lint:js -- --rule 'prettier/prettier: 0'",
+    "lint:sass": "stylelint '{components,pages}/**/*.js'",
     "format:sass": "stylefmt --recursive 'styles/**/*.*css'",
-    "format:js": "prettier --single-quote --trailing-comma all --no-semi --print-width 180 --write \"pages/**/*.js\"",
-    "precommit": "lint-staged && yarn lint",
+    "format:js": "prettier --single-quote --trailing-comma all --no-semi --print-width 180 --write \"{pages,styles,components}/**/*.js\"",
+    "precommit": "lint-staged && npm run lint",
     "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
   },
-  "author": "Davide Bertola <dade@dadeb.it>",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "6.7.6",
     "babel-plugin-module-resolver": "2.5.0",
+    "babel-plugin-styled-components": "^1.1.4",
     "babel-plugin-wrap-in-js": "^1.1.0",
     "bootstrap-sass": "^3.3.5",
     "check-node-version": "^2.1.0",
@@ -46,6 +46,8 @@
     "react-scrollable-anchor": "^0.4.2",
     "sass-loader": "^4.1.1",
     "smooth-scroll": "^11.1.0",
+    "styled-components": "^2.1.0",
+    "styled-jsx": "^1.0.3",
     "yarn": "^0.24.5"
   },
   "devDependencies": {
@@ -66,23 +68,22 @@
     "eslint-plugin-react": "6.9.0",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
+    "nodemon": "^1.11.0",
     "now": "^6.2.4",
     "prettier": "^1.2.2",
     "sass-lint": "^1.10.2",
     "stylefmt": "^5.3.2",
     "stylelint": "^7.10.1",
-    "stylelint-config-standard": "^16.0.0"
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-processor-styled-components": "^0.1.2"
   },
   "engines": {
-    "node": ">=7.6.0 <8"
+    "node": ">=8 <9"
   },
   "lint-staged": {
     "pages/**/*.js": [
       "yarn format:js --",
       "git add"
     ]
-  },
-  "now": {
-    "currentTeam": "zdev"
   }
 }

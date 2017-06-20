@@ -7,9 +7,8 @@ export default class Header extends Component {
   }
 
   onResponsiveMenuClick() {
-      this.setState({ collapsed: true })
+    this.setState({ collapsed: true })
   }
-
 
   render() {
     return (
@@ -27,7 +26,8 @@ export default class Header extends Component {
                       <span className="icon-bar" />
                     </button>
                     <a className="brand" rel="home" data-scroll="true" href="#home" title="ZDev"><img src="/static/logo.svg" alt="ZDev logo" /></a>
-                  </div> {/* /navbar-header */}
+                  </div>{' '}
+                  {/* /navbar-header */}
                   <div id="nav-bar" className={`${this.state.collapsed ? 'collapse' : ''} navbar-collapse`}>
                     <ul className="nav navbar-nav navbar-right navbar-links" onClick={() => this.onResponsiveMenuClick()}>
                       <li><a data-scroll="true" href="#about">About</a></li>
@@ -40,11 +40,15 @@ export default class Header extends Component {
                       <li />
                       <li />
                     </ul>
-                  </div> {/* /collapse navbar-collapse */}
-                </div> {/* /containerfluid */}
+                  </div>{' '}
+                  {/* /collapse navbar-collapse */}
+                </div>{' '}
+                {/* /containerfluid */}
               </nav>
-            </div> {/* /row */}
-          </div> {/* /container */}
+            </div>{' '}
+            {/* /row */}
+          </div>{' '}
+          {/* /container */}
         </header>
       </div>
     )
