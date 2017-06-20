@@ -81,8 +81,8 @@
     "node": ">=8 <9"
   },
   "lint-staged": {
-    "pages/**/*.js": [
-      "yarn format:js --",
+    "{components,pages,styles}/**/*.js": [
+      "prettier --single-quote --trailing-comma all --no-semi --print-width 180 --write",
       "git add"
     ]
   }
