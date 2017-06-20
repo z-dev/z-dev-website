@@ -1,7 +1,7 @@
 const screenXsMin = 480
 const screenSmMin = 768
 const screenMdMin = 992
-const screenLgMin = 1200
+const screenLgMin = 1400
 const lgGridMargin = 50
 const screenLgWidth = screenLgMin - 2 * lgGridMargin
 
@@ -22,6 +22,9 @@ export default {
   fontFamily: 'Source Sans Pro, sans-serif',
   fontWeight: '300',
   linkColor: '#000000',
+  h2FontSize: '34px',
+  h4FontSize: '25.6px',
   h5FontSize: '22.2px',
-  headerFontColor: '#2b2b2b',
+  headerFontColor: '#000000',
+  smallerHeaderFontColor: '#2b2b2b',
 }
