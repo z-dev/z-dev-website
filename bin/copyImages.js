@@ -4,23 +4,31 @@ const path = require('path')
 const fs = require('fs')
 const ncp = require('ncp')
 
+const getStaticPathForFile = (file) => {
+  const filePath = file.split(path.sep)
+  return path.join('static', ...filePath.slice(1, filePath.length))
+}
+
+const createFolderIfDoesntExist = (folder) => {
+  if (!fs.existsSync(folder)){
+    fs.mkdirSync(folder);
+  }
+}
+
 const resizeImage = (image, options) => {
   console.log(`Resizing Image ${image} into static folder`)
   const width = options.width || 1000
   const height = options.height || 1000
+  const staticPathForFile = getStaticPathForFile(image)
+  createFolderIfDoesntExist(path.dirname(staticPathForFile))
   sharp(image)
     .resize(width, height)
     .max()
-    .toFile(getStaticPathForFile(image), function(error, info) {
+    .toFile(staticPathForFile, function(error, info) {
       if (error) {
         console.error(error)
       }
     })
-}
-
-const getStaticPathForFile = (file) => {
-  const filePath = file.split(path.sep)
-  return path.join('static', ...filePath.slice(1, filePath.length))
 }
 
 const copySvgsToStatic = () => {
@@ -29,11 +37,9 @@ const copySvgsToStatic = () => {
   svgFiles.forEach(file => {
     const staticFilePath = getStaticPathForFile(file)
     const folder = path.dirname(staticFilePath)
-    if (!fs.existsSync(folder)){
-      fs.mkdirSync(folder);
-    }
-    console.log(`Copying ${file} into ${staticFilePath}`)
 
+    console.log(`Copying ${file} into ${staticFilePath}`)
+    createFolderIfDoesntExist(folder)
     ncp(file, staticFilePath,  function (err) {
      if (err) {
        return console.error(err);
