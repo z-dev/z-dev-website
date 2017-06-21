@@ -20,3 +20,9 @@ export const H5 = H1.withComponent('h5').extend`
   font-weight: normal;
   color: ${props => props.theme.smallerHeaderFontColor};
 `
+
+export const H6 = H1.withComponent('h6').extend`
+  fontSize: ${props => props.theme.h6FontSize};
+  font-weight: normal;
+  color: ${props => props.theme.smallerHeaderFontColor};
+`
