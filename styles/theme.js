@@ -27,4 +27,5 @@ export default {
   h5FontSize: '22.2px',
   headerFontColor: '#000000',
   smallerHeaderFontColor: '#2b2b2b',
+  primaryColor: '#042559',
 }

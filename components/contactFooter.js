@@ -3,6 +3,7 @@ import ResponsiveContainer from 'components/core/responsiveContainer'
 import Div from 'components/core/div'
 import Link from 'components/core/link'
 import { H5 } from 'components/core/headerText'
+import { IoniconLink } from 'components/core/ionicons'
 import styled from 'styled-components'
 
 const Container = styled(ResponsiveContainer)`
@@ -64,9 +65,7 @@ export default () =>
     <ContactContainer>
       <H5>LinkedIn</H5>
       <ContactInnerContainer>
-        <ContactLink href="https://www.linkedin.com/company/zdev-limited">
-          <span className="contact-icon ion-social-linkedin" />
-        </ContactLink>
+        <IoniconLink url="https://www.linkedin.com/company/zdev-limited" icon="ion-social-linkedin" />
       </ContactInnerContainer>
     </ContactContainer>
   </Container>
