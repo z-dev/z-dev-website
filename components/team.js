@@ -26,6 +26,9 @@ const TeamMemberContainer = Div.extend`
   align-items: center;
   width: 400px;
   margin: 30px;
+  @media (max-width: ${props => props.theme.screenXsMax}px) {
+    width: auto;
+  }
 `
 
 const HeadShotImage = styled.img`
