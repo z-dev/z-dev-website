@@ -6,7 +6,7 @@ const OuterContainer = Div.extend`
   display: flex;
 
   #innerContainer {
-   flex: 1;
+    flex: 1;
     flex-direction: column;
     align-items: flex-start;
 
