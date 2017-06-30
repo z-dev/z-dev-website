@@ -23,6 +23,7 @@ export default {
   fontWeight: '300',
   linkColor: '#000000',
   h2FontSize: '34px',
+  h3FontSize: '28px',
   h4FontSize: '25.6px',
   h5FontSize: '22.2px',
   h6FontSize: '19.2px',
