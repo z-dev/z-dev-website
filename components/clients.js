@@ -3,7 +3,7 @@ import ResponsiveContainer from 'components/core/responsiveContainer'
 import Div from 'components/core/div'
 import Text from 'components/core/text'
 import { LinkButton } from 'components/core/button'
-import { H2, H3, H4 } from 'components/core/headerText'
+import { H2, H3 } from 'components/core/headerText'
 import styled from 'styled-components'
 
 const projectWidth = 800
@@ -35,9 +35,6 @@ const ViewProjectButton = LinkButton.extend`
   }
 `
 
-const ClientHeader = H4.extend`
-`
-
 const ExpressoProject = Div.extend`
   flex-direction: row;
   width: ${projectWidth}px;
@@ -51,16 +48,9 @@ const ExpressoProject = Div.extend`
 const ExpressoProjectContainer = Div.extend`
   flex-direction: column;
   align-items: center;
-  margin: 20px 0px 80px;
+  margin: 20px 0px 40px;
 `
-const ClientsInnerContainer = Div.extend`
-  flex-direction: column;
-  align-items: center;
-`
-const ClientsContainer = Div.extend`
-  flex-direction: column;
-  align-items: stretch;
-`
+
 const ExpressoTextInnerContainer = Div.extend`
   flex-direction: column;
   align-items: flex-start;
@@ -87,8 +77,8 @@ const ExpressoImageContainer = Div.extend`
   justify-content: center;
 `
 const LogosContainer = Div.extend`
-  margin-top: 50px;
   justify-content: center;
+  margin: 20px 0px 40px;
 `
 const LogosInnerContainer = Div.extend`
   max-width: 900px;
@@ -120,7 +110,7 @@ const ClientText = Text.extend`
 const Seperator = styled.hr`
   width: 150px;
   border-top: 3px solid ${props => props.theme.primaryColor};
-  margin-bottom: 30px;
+  margin: 50px 0 30px;
 `
 
 const JogLogo = styled.img`
@@ -146,13 +136,33 @@ const KinteractLogo = styled.img`
 `
 const TopHeader = H2.extend`
   text-align: center;
-  margin-bottom: 40px;
+`
+
+const Intro = Div.extend`
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 `
 
 export default () =>
   <Container>
+    <Intro>
+      <TopHeader>{"We'd love to work with you"}</TopHeader>
+      <ClientText>
+        {
+          "We've worked on a variety of projects with a wide range of clients, each with a unique problem set and perspective. We continually improve our process and do our best work in strong partnerships with our clients."
+        }
+      </ClientText>
+      <Seperator />
+    </Intro>
+    <LogosContainer>
+      <LogosInnerContainer>
+        <JogLogo src="/static/clients/jogLogo.svg" />
+        <KinteractLogo src="/static/clients/kinteractLogo.svg" />
+        <DressipiLogo src="/static/clients/dressipiLogo.svg" />
+      </LogosInnerContainer>
+    </LogosContainer>
     <ExpressoProjectContainer>
-      <TopHeader>Our Clients</TopHeader>
       <ExpressoProject>
         <ExpressoImageContainer>
           <Expresso src="/static/zdevexpresso.png" alt="Expresso App" />
@@ -167,22 +177,4 @@ export default () =>
         </ExpressoTextContainer>
       </ExpressoProject>
     </ExpressoProjectContainer>
-    <ClientsContainer>
-      <ClientsInnerContainer>
-        <ClientHeader>{"We'd love to work with you"}</ClientHeader>
-        <Seperator />
-        <ClientText>
-          {
-            "We've worked on a variety of projects with a wide range of clients, each with a unique problem set and perspective. We continually improve our process and do our best work in strong partnerships with our clients."
-          }
-        </ClientText>
-      </ClientsInnerContainer>
-      <LogosContainer>
-        <LogosInnerContainer>
-          <JogLogo src="/static/clients/jogLogo.svg" />
-          <KinteractLogo src="/static/clients/kinteractLogo.svg" />
-          <DressipiLogo src="/static/clients/dressipiLogo.svg" />
-        </LogosInnerContainer>
-      </LogosContainer>
-    </ClientsContainer>
   </Container>

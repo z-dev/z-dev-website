@@ -5,7 +5,7 @@ import Services from 'components/services'
 import TechStack from 'components/techStack'
 import Team from 'components/team'
 import About from 'components/about'
-import OurWork from 'components/ourWork'
+import Clients from 'components/clients'
 import Page from 'components/page'
 import stylesheet from 'styles/index.scss'
 import { configureAnchors } from 'react-scrollable-anchor'
@@ -23,7 +23,7 @@ export default () =>
       <ScrollableAnchor id={'services'} />
       <Services />
       <ScrollableAnchor id={'clients'} />
-      <OurWork />
+      <Clients />
       <ScrollableAnchor id={'techstack'} />
       <TechStack />
       <ScrollableAnchor id={'team'} />
