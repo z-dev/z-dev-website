@@ -43,8 +43,8 @@ export default class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a data-scroll="true" href="#our-work">
-                          Our Work
+                        <a data-scroll="true" href="#clients">
+                          Clients
                         </a>
                       </li>
                       <li>

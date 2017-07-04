@@ -3,7 +3,7 @@ import ResponsiveContainer from 'components/core/responsiveContainer'
 import Div from 'components/core/div'
 import Text from 'components/core/text'
 import { LinkButton } from 'components/core/button'
-import { H2, H4 } from 'components/core/headerText'
+import { H2, H3, H4 } from 'components/core/headerText'
 import styled from 'styled-components'
 
 const projectWidth = 800
@@ -20,7 +20,7 @@ const Container = styled(ResponsiveContainer)`
   padding-bottom: 45px;
 `
 
-const Header = H2.extend`
+const Header = H3.extend`
   align-text: center;
   padding-bottom: 0;
   margin-top: 0;
@@ -40,9 +40,7 @@ const ClientHeader = H4.extend`
 
 const ExpressoProject = Div.extend`
   flex-direction: row;
-  margin: 80px 0px 80px;
   width: ${projectWidth}px;
-
   @media (max-width: ${projectResponsiveBreak}px) {
     flex-direction: column;
     align-items: center;
@@ -53,6 +51,7 @@ const ExpressoProject = Div.extend`
 const ExpressoProjectContainer = Div.extend`
   flex-direction: column;
   align-items: center;
+  margin: 20px 0px 80px;
 `
 const ClientsInnerContainer = Div.extend`
   flex-direction: column;
@@ -145,10 +144,15 @@ const KinteractLogo = styled.img`
     height: 65px;
   }
 `
+const TopHeader = H2.extend`
+  text-align: center;
+  margin-bottom: 40px;
+`
 
 export default () =>
   <Container>
     <ExpressoProjectContainer>
+      <TopHeader>Our Clients</TopHeader>
       <ExpressoProject>
         <ExpressoImageContainer>
           <Expresso src="/static/zdevexpresso.png" alt="Expresso App" />

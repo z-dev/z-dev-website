@@ -22,7 +22,7 @@ export default () =>
       <About />
       <ScrollableAnchor id={'services'} />
       <Services />
-      <ScrollableAnchor id={'our-work'} />
+      <ScrollableAnchor id={'clients'} />
       <OurWork />
       <ScrollableAnchor id={'techstack'} />
       <TechStack />
