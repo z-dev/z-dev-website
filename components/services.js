@@ -34,6 +34,9 @@ const ServiceContainer = Div.extend`
   align-items: center;
   max-width: 350px;
   margin: 30px;
+  @media (max-width: ${props => props.theme.screenXsMax}px) {
+    width: auto;
+  }
 `
 const RightHandSide = Div.extend`flex-direction: column;`
 
