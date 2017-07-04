@@ -32,7 +32,7 @@ const ServicesContainer = Div.extend`
 const ServiceContainer = Div.extend`
   flex-direction: column;
   align-items: center;
-  width: 350px;
+  max-width: 350px;
   margin: 30px;
 `
 const RightHandSide = Div.extend`flex-direction: column;`

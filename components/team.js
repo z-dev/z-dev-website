@@ -22,7 +22,7 @@ const Header = H2.extend`align-text: center;`
 const TeamMemberContainer = Div.extend`
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  max-width: 400px;
   margin: 30px;
 `
 
@@ -64,13 +64,13 @@ export default () =>
     <TeamMembersContainer>
       <TeamMember
         name="Richard"
-        image="/static/Richheadshot.jpg"
+        image="/static/staff/rich.jpg"
         linkedInProfile="https://www.linkedin.com/in/richardgill3"
         description="Richard has a decade of experience ranging from Investment Banks to Start Ups. He enjoys learning new technologies and helping people solve real business problems."
       />
       <TeamMember
         name="John"
-        image="/static/john_headshot.jpg"
+        image="/static/staff/john.jpg"
         linkedInProfile="https://uk.linkedin.com/in/johnagill1"
         description="John specializes in frontend development. He‘s got a keen eye for detail and loves building great applications."
       />
