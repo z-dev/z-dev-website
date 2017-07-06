@@ -2,9 +2,9 @@ import React from 'react'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import Div from 'components/core/div'
 import Text from 'components/core/text'
-import { LinkButton } from 'components/core/button'
 import { H2, H3 } from 'components/core/headerText'
 import styled from 'styled-components'
+import Carousel from 'react-slick'
 
 const projectWidth = 800
 const projectResponsiveBreak = 850
@@ -26,12 +26,6 @@ const Header = H3.extend`
   margin-top: 0;
   @media (max-width: ${projectResponsiveBreak}px) {
     display:none;
-  }
-`
-
-const ViewProjectButton = LinkButton.extend`
-  @media (max-width: ${projectResponsiveBreak}px) {
-    margin-top: 15px;
   }
 `
 
@@ -72,9 +66,13 @@ const ExpressoTextContainer = Div.extend`
 const ExpressoImageContainer = Div.extend`
   width: ${projectWidth / 2}px;
   @media (max-width: ${projectResponsiveBreak}px) {
-    width: auto;
+    width: none;
   }
   justify-content: center;
+  * {
+    min-height: 0;
+    min-width: 0;
+  }
 `
 const LogosContainer = Div.extend`
   justify-content: center;
@@ -143,6 +141,10 @@ const Intro = Div.extend`
   align-items: center;
   margin-top: 30px;
 `
+const CarouselItem = Div.extend`
+  justify-content: center;
+  display: flex !important;
+`
 
 export default () =>
   <Container>
@@ -165,14 +167,24 @@ export default () =>
     <ExpressoProjectContainer>
       <ExpressoProject>
         <ExpressoImageContainer>
-          <Expresso src="/static/zdevexpresso.png" alt="Expresso App" />
+          <Carousel slidesToShow={1} autoplay autoplaySpeed={4000} draggable={false} infinite>
+            <CarouselItem>
+              <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
+            </CarouselItem>
+            <CarouselItem>
+              <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
+            </CarouselItem>
+            <CarouselItem>
+              <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
+            </CarouselItem>
+          </Carousel>
         </ExpressoImageContainer>
         <ExpressoTextContainer>
           <ExpressoTextInnerContainer>
             <Header>Expresso</Header>
             <ExpressoText>We partnered with the guys at Expresso to take their idea from paper to App Store.</ExpressoText>
+            <ExpressoText>Expresso is an App to allow people to pre-order coffee and pick up.</ExpressoText>
             <ExpressoText>We built a beautiful App to prove the business case.</ExpressoText>
-            <ViewProjectButton>View Project</ViewProjectButton>
           </ExpressoTextInnerContainer>
         </ExpressoTextContainer>
       </ExpressoProject>
