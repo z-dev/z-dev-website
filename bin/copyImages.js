@@ -4,14 +4,25 @@ const path = require('path')
 const fs = require('fs')
 const ncp = require('ncp')
 
+function mkdirpSync(filePath, mode = 0777){
+  try {
+    fs.mkdirSync(filePath, mode)
+  } catch({errno}) {
+    if (-2 !== errno) return // enoent
+    mkdirpSync(path.dirname(filePath), mode)
+    mkdirpSync(filePath, mode)
+  }
+}
+
+
 const getStaticPathForFile = (file) => {
   const filePath = file.split(path.sep)
-  return path.join('static', ...filePath.slice(1, filePath.length))
+  return path.join('static', ...filePath.slice(2, filePath.length))
 }
 
 const createFolderIfDoesntExist = (folder) => {
   if (!fs.existsSync(folder)){
-    fs.mkdirSync(folder);
+    mkdirpSync(folder);
   }
 }
 
@@ -32,7 +43,7 @@ const resizeImage = (image, options) => {
 }
 
 const copySvgsToStatic = () => {
-  const svgFiles = recursiveReadSync('images').filter(filename => filename.endsWith('.svg'))
+  const svgFiles = recursiveReadSync('assets').filter(filename => filename.endsWith('.svg'))
 
   svgFiles.forEach(file => {
     const staticFilePath = getStaticPathForFile(file)
@@ -48,15 +59,14 @@ const copySvgsToStatic = () => {
   })
 }
 
-resizeImage('images/techStackLogos/docker.png', {height: 80})
-resizeImage('images/techStackLogos/firebase.png', {height: 80})
-resizeImage('images/techStackLogos/redux.png', {height: 80})
-resizeImage('images/techStackLogos/next.png', {height: 80})
-resizeImage('images/techStackLogos/webpack.png', {height: 80})
-resizeImage('images/staff/rich.jpg', {width: 300, height: 300})
-resizeImage('images/staff/john.jpg', {width: 300, height: 300})
-resizeImage('images/zdevexpresso.png', {width: 1000, height: 1000})
-resizeImage('images/actfit-web.png', {width: 1000, height: 1000})
+resizeImage('assets/images/techStackLogos/docker.png', {height: 80})
+resizeImage('assets/images/techStackLogos/firebase.png', {height: 80})
+resizeImage('assets/images/techStackLogos/redux.png', {height: 80})
+resizeImage('assets/images/techStackLogos/next.png', {height: 80})
+resizeImage('assets/images/techStackLogos/webpack.png', {height: 80})
+resizeImage('assets/images/staff/rich.jpg', {width: 300, height: 300})
+resizeImage('assets/images/staff/john.jpg', {width: 300, height: 300})
+resizeImage('assets/images/projects/zdevexpresso.png', {width: 1000, height: 1000})
 
 
 copySvgsToStatic()
