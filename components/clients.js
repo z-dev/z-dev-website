@@ -89,6 +89,7 @@ const LogosInnerContainer = Div.extend`
 const Expresso = styled.img`
   border-radius: 8px;
   height: 300px;
+  width: 300px;
 `
 
 const ExpressoText = Text.extend`
