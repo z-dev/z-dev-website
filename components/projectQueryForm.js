@@ -3,31 +3,49 @@ import Div from 'components/core/div.js'
 import Button from 'components/core/button.js'
 
 export default class ProjectForm extends Component {
-  render(props) {
+  constructor() {
+    super()
+    this.state = { name: '', email: '', message: '' }
+  }
+
+  updateName(value) {
+    this.setState({ name: value })
+  }
+
+  updateEmail(value) {
+    this.setState({ email: value })
+  }
+
+  updateMessage(value) {
+    this.setState({ message: value })
+  }
+
+  render() {
+    console.log(this.state)
     return (
-      <Div className="container" {...props}>
+      <Div className="container">
         <div className="row">
           <form>
             <div>
               <label htmlFor="name">Name:</label>
-              <input id="name" type="text" value={this.props.name} onChange={event => this.props.updateName(event.target.value)} />
+              <input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
             </div>
             <div>
               <label htmlFor="email">Email:</label>
-              <input id="email" type="text" value={this.props.email} onChange={event => this.props.updateEmail(event.target.value)} />
+              <input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
             </div>
             <div>
               <label htmlFor="message">Message:</label>
-              <textarea id="message" value={this.props.message} onChange={event => this.props.updateMessage(event.target.value)} />
+              <textarea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
             </div>
             <div className="button">
               <Button
                 type="button"
                 onClick={() =>
-                  this.props.sendMessage({
-                    userName: this.props.name,
-                    userEmail: this.props.email,
-                    userMessage: this.props.message,
+                  this.sendMessage({
+                    userName: this.state.name,
+                    userEmail: this.state.email,
+                    userMessage: this.state.message,
                   })}
               >
                 Send your query
