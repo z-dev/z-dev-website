@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import { LinkButton } from 'components/core/button'
 import { H3 } from 'components/core/headerText'
+import Modal from 'react-modal'
 import styled from 'styled-components'
 
 const Container = styled(ResponsiveContainer)`
@@ -29,11 +30,52 @@ const Logo = styled.img`
 
 const CallToAction = LinkButton.extend`margin-top: 48px;`
 
-export default () =>
-  <Container>
-    <Logo src="/static/logo.svg" alt="ZDev logo" />
-    <Header>Website and App Developers</Header>
-    <CallToAction href="#contact" data-scroll="true">
-      Tell us about your project
-    </CallToAction>
-  </Container>
+const modalStyle = {
+  overlay: {
+    position: 'fixed',
+    top: 75,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+  },
+  content: {
+    position: 'absolute',
+    top: '40px',
+    left: '40px',
+    right: '40px',
+    bottom: '40px',
+    border: '1px solid #ccc',
+    background: '#fff',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    borderRadius: '4px',
+    outline: 'none',
+    padding: '20px',
+  },
+}
+export default class About extends Component {
+  constructor() {
+    super()
+    this.state = { projectModalOpen: false }
+  }
+
+  onProjectQueryButtonClick() {
+    this.setState({ projectModalOpen: true })
+  }
+
+  render() {
+    return (
+      <Container>
+        <Logo src="/static/logo.svg" alt="ZDev logo" />
+        <Header>Website and App Developers</Header>
+        <CallToAction href="#contact" data-scroll="true" onClick={() => this.onProjectQueryButtonClick()}>
+          Tell us about your project
+        </CallToAction>
+        <Modal isOpen={this.state.projectModalOpen} contentLabel="Project Query Modal" style={modalStyle}>
+          <h1>Hello there</h1>
+        </Modal>
+      </Container>
+    )
+  }
+}
