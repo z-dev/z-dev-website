@@ -24,7 +24,7 @@ export default class ProjectForm extends Component {
   }
 
   sendMessage(message) {
-    firebase.database().ref('/projectQueries').push(message)
+    firebase.database().ref('/projectQueries').update(message)
     this.setState({ name: '', email: '', message: '' })
   }
 
@@ -49,13 +49,16 @@ export default class ProjectForm extends Component {
             <div className="button">
               <Button
                 type="button"
-                onClick={() =>
+                onClick={() => {
+                  const timestamp = moment().format('YYYYDDMMHHmmss')
                   this.sendMessage({
-                    timestamp: moment().format('DD/MM/YYYY HH:mm a'),
-                    userName: this.state.name,
-                    userEmail: this.state.email,
-                    userMessage: this.state.message,
-                  })}
+                    [timestamp]: {
+                      userName: this.state.name,
+                      userEmail: this.state.email,
+                      userMessage: this.state.message,
+                    },
+                  })
+                }}
               >
                 Send your query
               </Button>
