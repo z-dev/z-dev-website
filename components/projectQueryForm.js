@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import firebase from 'firebase'
+import moment from 'moment'
+import 'common/initializeFirebase.js'
 import Div from 'components/core/div.js'
 import Button from 'components/core/button.js'
 
@@ -18,6 +21,11 @@ export default class ProjectForm extends Component {
 
   updateMessage(value) {
     this.setState({ message: value })
+  }
+
+  sendMessage(message) {
+    firebase.database().ref('/projectQueries').push(message)
+    this.setState({ name: '', email: '', message: '' })
   }
 
   render() {
@@ -43,6 +51,7 @@ export default class ProjectForm extends Component {
                 type="button"
                 onClick={() =>
                   this.sendMessage({
+                    timestamp: moment().format('DD/MM/YYYY HH:mm a'),
                     userName: this.state.name,
                     userEmail: this.state.email,
                     userMessage: this.state.message,
