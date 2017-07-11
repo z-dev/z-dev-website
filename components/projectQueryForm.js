@@ -4,6 +4,33 @@ import moment from 'moment'
 import 'common/initializeFirebase.js'
 import Div from 'components/core/div.js'
 import Button from 'components/core/button.js'
+import styled from 'styled-components'
+
+const OuterContainer = styled(Div)`
+  flex-direction: column;
+  align-items: center;
+`
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`
+
+const Label = styled.label`
+  margin-top: 20px;
+`
+const InputContainer = styled(Div)`
+  flex-direction: column;
+`
+
+const SendQueryButton = styled(Button)`
+  margin-top: 25px;
+  font-size: 16px;
+  display: flex;
+  align-self: center;
+`
 
 export default class ProjectForm extends Component {
   constructor() {
@@ -30,41 +57,37 @@ export default class ProjectForm extends Component {
 
   render() {
     return (
-      <Div>
-        <div>
-          <form>
-            <div>
-              <label htmlFor="name">Name:</label>
-              <input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
-            </div>
-            <div>
-              <label htmlFor="email">Email:</label>
-              <input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
-            </div>
-            <div>
-              <label htmlFor="message">Message:</label>
-              <textarea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
-            </div>
-            <div className="button">
-              <Button
-                type="button"
-                onClick={() => {
-                  const timestamp = moment().format('YYYYDDMMHHmmss')
-                  this.sendMessage({
-                    [timestamp]: {
-                      userName: this.state.name,
-                      userEmail: this.state.email,
-                      userMessage: this.state.message,
-                    },
-                  })
-                }}
-              >
-                Send your query
-              </Button>
-            </div>
-          </form>
-        </div>
-      </Div>
+      <OuterContainer>
+        <Form>
+          <InputContainer>
+            <Label htmlFor="name">Name:</Label>
+            <input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
+          </InputContainer>
+          <InputContainer>
+            <Label htmlFor="email">Email:</Label>
+            <input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
+          </InputContainer>
+          <InputContainer>
+            <Label htmlFor="message">Message:</Label>
+            <textarea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
+          </InputContainer>
+          <SendQueryButton
+            type="button"
+            onClick={() => {
+              const timestamp = moment().format('YYYYDDMMHHmmss')
+              this.sendMessage({
+                [timestamp]: {
+                  userName: this.state.name,
+                  userEmail: this.state.email,
+                  userMessage: this.state.message,
+                },
+              })
+            }}
+          >
+            Send your query
+          </SendQueryButton>
+        </Form>
+      </OuterContainer>
     )
   }
 }
