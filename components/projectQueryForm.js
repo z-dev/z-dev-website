@@ -29,10 +29,9 @@ export default class ProjectForm extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
-      <Div className="container">
-        <div className="row">
+      <Div>
+        <div>
           <form>
             <div>
               <label htmlFor="name">Name:</label>

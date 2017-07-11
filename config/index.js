@@ -1,10 +1,10 @@
 export default {
   firebaseConfig : {
-    apiKey: "AIzaSyBF1kcIyW8vApGXyXPaWD4eCODkxz_Jg7M",
-    authDomain: "z-dev-dev.firebaseapp.com",
-    databaseURL: "https://z-dev-dev.firebaseio.com",
-    projectId: "z-dev-dev",
-    storageBucket: "z-dev-dev.appspot.com",
-    messagingSenderId: "362228169866"
+    apiKey: "AIzaSyB96CHqxhLWfb2jWnGU2duVSfgqi8m9h1Q",
+    authDomain: "z-dev-site-dev.firebaseapp.com",
+    databaseURL: "https://z-dev-site-dev.firebaseio.com",
+    projectId: "z-dev-site-dev",
+    storageBucket: "z-dev-site-dev.appspot.com",
+    messagingSenderId: "986603931876"
   }
 }
