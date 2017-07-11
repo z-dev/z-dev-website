@@ -66,16 +66,20 @@ export default class About extends Component {
     this.setState({ projectModalOpen: true })
   }
 
+  closeProjectQueryModal() {
+    this.setState({ projectModalOpen: false })
+  }
+
   render() {
     return (
       <Container>
         <Logo src="/static/logo.svg" alt="ZDev logo" />
         <Header>Website and App Developers</Header>
-        <CallToAction href="#contact" data-scroll="true" onClick={() => this.onProjectQueryButtonClick()}>
+        <CallToAction href="#" data-scroll="true" onClick={() => this.onProjectQueryButtonClick()}>
           Tell us about your project
         </CallToAction>
         <Modal isOpen={this.state.projectModalOpen} contentLabel="Project Query Modal" style={modalStyle}>
-          <ProjectQueryForm />
+          <ProjectQueryForm onXClick={() => this.closeProjectQueryModal()} />
         </Modal>
       </Container>
     )

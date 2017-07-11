@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
 import moment from 'moment'
+import _ from 'lodash'
 import 'common/initializeFirebase.js'
 import Div from 'components/core/div.js'
 import Button from 'components/core/button.js'
@@ -14,6 +15,11 @@ const OuterContainer = styled(Div)`
 const FormHeaderContainer = styled(Div)`
   flex-direction: row;
   align-items: center;
+`
+
+const CloseQueryAnchor = styled.a`
+  display: flex;
+  align-self: flex-end;
 `
 
 const Form = styled.form`
@@ -41,7 +47,7 @@ const SendQueryButton = styled(Button)`
 export default class ProjectForm extends Component {
   constructor() {
     super()
-    this.state = { name: '', email: '', message: '' }
+    this.state = { name: '', email: '', message: '', messageSent: false, incompleteDataEntered: false }
   }
 
   updateName(value) {
@@ -57,46 +63,58 @@ export default class ProjectForm extends Component {
   }
 
   sendMessage(message) {
-    firebase.database().ref('/projectQueries').update(message)
-    this.setState({ name: '', email: '', message: '' })
+    if (this.state.name && this.state.email && this.state.message) {
+      firebase.database().ref('/projectQueries').update(message)
+      this.setState({ name: '', email: '', message: '', messageSent: true, incompleteDataEntered: false })
+      _.delay(() => this.props.onXClick(), 5000)
+    } else {
+      this.setState({ incompleteDataEntered: true })
+    }
   }
 
   render() {
     return (
       <OuterContainer>
-        <FormHeaderContainer>
-          <h3>Tell us about your project</h3>
-          <a>X</a>
-        </FormHeaderContainer>
-        <Form>
-          <InputContainer>
-            <Label htmlFor="name">Name:</Label>
-            <input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
-          </InputContainer>
-          <InputContainer>
-            <Label htmlFor="email">Email:</Label>
-            <input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
-          </InputContainer>
-          <InputContainer>
-            <Label htmlFor="message">Message:</Label>
-            <textarea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
-          </InputContainer>
-          <SendQueryButton
-            type="button"
-            onClick={() => {
-              const timestamp = moment().format('YYYYDDMMHHmmss')
-              this.sendMessage({
-                [timestamp]: {
-                  userName: this.state.name,
-                  userEmail: this.state.email,
-                  userMessage: this.state.message,
-                },
-              })
-            }}
-          >
-            Send your query
-          </SendQueryButton>
-        </Form>
+        {this.state.messageSent
+          ? <h3>Your enquiry has been sent, we will be in touch soon!</h3>
+          : <div>
+              <FormHeaderContainer>
+                <h3>Tell us about your project</h3>
+                <CloseQueryAnchor href="#" onClick={() => this.props.onXClick()}>X</CloseQueryAnchor>
+              </FormHeaderContainer>
+              <Form>
+                <InputContainer>
+                  <Label htmlFor="name">Name:</Label>
+                  <input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
+                </InputContainer>
+                <InputContainer>
+                  <Label htmlFor="email">Email:</Label>
+                  <input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
+                </InputContainer>
+                <InputContainer>
+                  <Label htmlFor="message">Message:</Label>
+                  <textarea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
+                </InputContainer>
+                <SendQueryButton
+                  type="button"
+                  onClick={() => {
+                    const timestamp = moment().format('YYYYDDMMHHmmss')
+
+                    this.sendMessage({
+                      [timestamp]: {
+                        userName: this.state.name,
+                        userEmail: this.state.email,
+                        userMessage: this.state.message,
+                      },
+                    })
+                  }}
+                >
+                  Send your query
+                </SendQueryButton>
+              </Form>
+              {this.state.incompleteDataEntered ? <text>Please fill out all of the boxes above</text> : null}
+            </div>}
+
       </OuterContainer>
     )
   }
