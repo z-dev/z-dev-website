@@ -11,6 +11,11 @@ const OuterContainer = styled(Div)`
   align-items: center;
 `
 
+const FormHeaderContainer = styled(Div)`
+  flex-direction: row;
+  align-items: center;
+`
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -23,6 +28,7 @@ const Label = styled.label`
 `
 const InputContainer = styled(Div)`
   flex-direction: column;
+  width: 100%;
 `
 
 const SendQueryButton = styled(Button)`
@@ -58,6 +64,10 @@ export default class ProjectForm extends Component {
   render() {
     return (
       <OuterContainer>
+        <FormHeaderContainer>
+          <h3>Tell us about your project</h3>
+          <a>X</a>
+        </FormHeaderContainer>
         <Form>
           <InputContainer>
             <Label htmlFor="name">Name:</Label>
