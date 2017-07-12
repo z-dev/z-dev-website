@@ -101,7 +101,7 @@ const MessageSentTitle = styled(H3)`
 export default class ProjectForm extends Component {
   constructor() {
     super()
-    this.state = { name: '', email: '', message: '', messageSent: false, incompleteDataEntered: false }
+    this.state = { name: '', email: '', message: '', messageSent: false, formIncomplete: false }
   }
 
   onFormSubmit() {
@@ -130,10 +130,10 @@ export default class ProjectForm extends Component {
   sendMessage(message) {
     if (this.state.name && this.state.email && this.state.message) {
       firebase.database().ref('/projectQueries').update(message)
-      this.setState({ name: '', email: '', message: '', messageSent: true, incompleteDataEntered: false })
+      this.setState({ name: '', email: '', message: '', messageSent: true, formIncomplete: false })
       _.delay(() => this.props.onXClick(), 5000)
     } else {
-      this.setState({ incompleteDataEntered: true })
+      this.setState({ formIncomplete: true })
     }
   }
 
@@ -163,7 +163,7 @@ export default class ProjectForm extends Component {
                 </InputContainer>
                 <SendQueryButton>Send your query</SendQueryButton>
               </ProjectQueryForm>
-              {this.state.incompleteDataEntered ? <Text>Please fill out all of the boxes above</Text> : null}
+              {this.state.formIncomplete ? <Text>Please fill out all of the boxes above</Text> : null}
             </FormContainer>}
 
       </OuterContainer>
