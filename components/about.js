@@ -34,7 +34,6 @@ const CallToAction = Button.extend`margin-top: 48px;`
 const modalStyle = {
   overlay: {
     top: 75,
-    backgroundColor: 'rgba(255, 255, 255, 0.75)',
   },
   content: {
     position: 'absolute',
