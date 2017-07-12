@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "prebuild": "rm -rf node_modules/.cache",
     "check:node": "check-node-version --node \">=8.1 <9\"",
     "test": "npm run lint",
-    "dev": "bin/buildStatic.sh && next dev",
+    "dev": "npm run prebuild && bin/buildStatic.sh && next dev",
     "build": "bin/buildStatic.sh && next build",
     "start": "next start",
     "deploy:dev": "now --name=z-dev-site-dev --alias=z-dev-site-dev -e CONFIG_ENV=development",
