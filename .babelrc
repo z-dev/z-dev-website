@@ -7,14 +7,16 @@
           "styles": "./styles"
         },
         "cwd": "babelrc"
-    }],
+      }
+    ],
     [
       "wrap-in-js",
       {
         "extensions": ["css$", "scss$"]
       }
     ],
-    ["styled-components", { "ssr": true } ]
+    ["styled-components", { "ssr": true } ],
+    ["transform-define", "./envConfig.js"]
   ],
   "presets": [
     "next/babel"
