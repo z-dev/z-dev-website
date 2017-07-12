@@ -98,6 +98,10 @@ const MessageSentTitle = styled(H3)`
   text-align: center;
 `
 
+const sendMessage = message => {
+  firebase.database().ref('/projectQueries').update(message)
+}
+
 export default class ProjectForm extends Component {
   constructor() {
     super()
@@ -105,14 +109,20 @@ export default class ProjectForm extends Component {
   }
 
   onFormSubmit() {
-    const timestamp = moment().tz('Europe/London').utc().format()
-    this.sendMessage({
-      [timestamp]: {
-        userName: this.state.name,
-        userEmail: this.state.email,
-        userMessage: this.state.message,
-      },
-    })
+    if (this.state.name && this.state.email && this.state.message) {
+      const timestamp = moment().tz('Europe/London').utc().format()
+      sendMessage({
+        [timestamp]: {
+          userName: this.state.name,
+          userEmail: this.state.email,
+          userMessage: this.state.message,
+        },
+      })
+      this.setState({ name: '', email: '', message: '', messageSent: true, formIncomplete: false })
+      _.delay(() => this.props.onXClick(), 5000)
+    } else {
+      this.setState({ formIncomplete: true })
+    }
   }
 
   updateName(value) {
@@ -125,16 +135,6 @@ export default class ProjectForm extends Component {
 
   updateMessage(value) {
     this.setState({ message: value })
-  }
-
-  sendMessage(message) {
-    if (this.state.name && this.state.email && this.state.message) {
-      firebase.database().ref('/projectQueries').update(message)
-      this.setState({ name: '', email: '', message: '', messageSent: true, formIncomplete: false })
-      _.delay(() => this.props.onXClick(), 5000)
-    } else {
-      this.setState({ formIncomplete: true })
-    }
   }
 
   render() {
