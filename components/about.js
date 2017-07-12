@@ -64,7 +64,7 @@ export default class About extends Component {
       <Container>
         <Logo src="/static/logo.svg" alt="ZDev logo" />
         <Header>Website and App Developers</Header>
-        <CallToAction href="#" data-scroll="true" onClick={() => this.openProjectQueryModal()}>
+        <CallToAction onClick={() => this.openProjectQueryModal()}>
           Tell us about your project
         </CallToAction>
         <Modal isOpen={this.state.projectModalOpen} contentLabel="Project Query Modal" style={modalStyle}>
