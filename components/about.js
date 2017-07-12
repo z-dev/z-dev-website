@@ -33,13 +33,8 @@ const CallToAction = Button.extend`margin-top: 48px;`
 
 const modalStyle = {
   overlay: {
-    position: 'fixed',
     top: 75,
-    left: 0,
-    right: 0,
-    bottom: 0,
     backgroundColor: 'rgba(255, 255, 255, 0.75)',
-    display: 'flex',
   },
   content: {
     position: 'absolute',
@@ -49,10 +44,6 @@ const modalStyle = {
     bottom: '0',
     border: 'none',
     background: 'none',
-    overflow: 'auto',
-    WebkitOverflowScrolling: 'touch',
-    outline: 'none',
-    padding: '20px',
   },
 }
 export default class About extends Component {
