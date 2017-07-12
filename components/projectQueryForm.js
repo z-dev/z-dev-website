@@ -36,12 +36,10 @@ const OuterContainer = styled(ResponsiveContainer)`
 `
 
 const FormContainer = styled(Div)`
-  width: 100%;
   flex-direction: column;
   align-items: center;
 `
 const FormHeaderContainer = styled(Div)`
-  width: 100%;
   flex-direction: row;
   justify-content: space-around;
 `
@@ -67,7 +65,6 @@ const InvisibleCloseQueryButton = styled.a`
 
 const ProjectQueryForm = styled(Form)`
   display: flex;
-  width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -78,7 +75,6 @@ const Label = styled.label`
 `
 const InputContainer = styled(Div)`
   flex-direction: column;
-  width: 100%;
 `
 
 const SendQueryButton = styled(Button)`
