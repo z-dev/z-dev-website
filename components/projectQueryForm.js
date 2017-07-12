@@ -92,6 +92,7 @@ const SendQueryButton = styled(Button)`
 
 const Text = styled.text`
   margin-bottom: 20px;
+  text-align: center;
 `
 
 const MessageSentTitle = styled(H5)`
