@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ResponsiveContainer from 'components/core/responsiveContainer'
-import { LinkButton } from 'components/core/button'
+import Button from 'components/core/button'
 import { H3 } from 'components/core/headerText'
 import ProjectQueryForm from 'components/projectQueryForm'
 import Modal from 'react-modal'
@@ -29,7 +29,7 @@ const Logo = styled.img`
   }
 `
 
-const CallToAction = LinkButton.extend`margin-top: 48px;`
+const CallToAction = Button.extend`margin-top: 48px;`
 
 const modalStyle = {
   overlay: {
@@ -43,15 +43,14 @@ const modalStyle = {
   },
   content: {
     position: 'absolute',
-    top: '10%',
-    left: '25%',
-    right: '25%',
-    bottom: '40%',
-    border: '1px solid #ccc',
-    background: '#fff',
+    top: '0',
+    left: '0',
+    right: '0',
+    bottom: '0',
+    border: 'none',
+    background: 'none',
     overflow: 'auto',
     WebkitOverflowScrolling: 'touch',
-    borderRadius: '4px',
     outline: 'none',
     padding: '20px',
   },
