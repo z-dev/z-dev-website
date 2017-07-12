@@ -63,7 +63,6 @@ const CloseQueryButton = styled.a`
 const InvisibleCloseQueryButton = styled.a`
   display: flex;
   visibility: hidden;
-  justify-self: flex-end;
 `
 
 const ProjectQueryForm = styled(Form)`
