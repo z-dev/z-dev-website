@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import _ from 'lodash'
 import 'common/initializeFirebase.js'
 import Div from 'components/core/div.js'
@@ -98,7 +98,7 @@ export default class ProjectForm extends Component {
                 <SendQueryButton
                   type="button"
                   onClick={() => {
-                    const timestamp = moment().format('YYYYDDMMHHmmss')
+                    const timestamp = moment().tz('Europe/London').format('YYYYDDMMHHmmss')
 
                     this.sendMessage({
                       [timestamp]: {
