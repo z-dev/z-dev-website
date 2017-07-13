@@ -50,7 +50,7 @@ const FormHeaderContainer = styled(Div)`
 
 const TextArea = styled.textarea`
   height: 100px;
-  border: solid 1px #c1c1c1;
+  border: solid 1px #ccc;
   resize: none;
 `
 
@@ -102,6 +102,10 @@ const MessageSentTitle = styled(H5)`
   text-align: center;
 `
 
+const ProjectQueryTitle = styled(H3)`
+  text-align: center;
+`
+
 const sendMessage = message => {
   firebase.database().ref('/projectQueries').update(message)
 }
@@ -143,10 +147,10 @@ export default class ProjectForm extends Component {
 
   render() {
     return (
-      <OuterContainer>
+      <OuterContainer onClick={console.log('hello')}>
         <FormHeaderContainer>
           <InvisibleCloseQueryButton>X</InvisibleCloseQueryButton>
-          <H3>How can we help you?</H3>
+          <ProjectQueryTitle>How can we help you?</ProjectQueryTitle>
           <CloseQueryButton href="#" onClick={() => this.props.onXClick()}>X</CloseQueryButton>
         </FormHeaderContainer>
         {this.state.messageSent
