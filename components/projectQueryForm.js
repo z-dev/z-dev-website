@@ -88,6 +88,10 @@ const SendQueryButton = styled(Button)`
   display: flex;
   align-self: center;
   margin-bottom: 25px;
+
+  :focus {
+    outline: 0;
+  }
 `
 
 const Text = styled.text`

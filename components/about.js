@@ -22,14 +22,20 @@ const Header = H3.extend`text-align: center;`
 
 const Logo = styled.img`
   width: 300px;
-  margin-bottom: 28px;
+  margin: 40px 0 28px;
 
   @media (max-width: ${props => props.theme.screenXsMax}px) {
     display: none;
   }
 `
 
-const CallToAction = Button.extend`margin-top: 48px;`
+const CallToAction = Button.extend`
+  margin-top: 48px;
+
+  :focus {
+    outline:0;
+  }
+`
 
 const modalStyle = {
   overlay: {
