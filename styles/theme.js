@@ -30,4 +30,5 @@ export default {
   headerFontColor: '#000000',
   smallerHeaderFontColor: '#2b2b2b',
   primaryColor: '#042559',
+  lightGrey: '#e0e0e0',
 }
