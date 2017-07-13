@@ -72,7 +72,7 @@ const MenuToggleButton = styled.button`
 export default class Header extends Component {
   constructor() {
     super()
-    this.state = { collapsed: true }
+    this.state = { collapsed: false }
   }
 
   onResponsiveMenuClick() {
