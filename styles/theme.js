@@ -33,4 +33,5 @@ export default {
   smallerHeaderFontColor: '#2b2b2b',
   primaryColor: '#042559',
   lightGrey: '#ededed',
+  textFontColor: '#595959',
 }
