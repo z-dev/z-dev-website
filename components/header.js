@@ -10,9 +10,13 @@ const LargeScreenLinks = styled.ul`
     display: none;
   }
 
+  .contactLink {
+    padding-right: 20px;
+  }
+
   li a {
     margin: 0 10px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 200;
     padding: 10px;
     text-decoration: none;
@@ -41,7 +45,7 @@ const SmallScreenLinks = styled.ul`
     text-decoration: none;
     display: flex;
     flex: 1;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 200;
     padding: 10px 0 10px 25px;
 
@@ -95,20 +99,18 @@ const MenuToggleButton = styled.button`
 `
 
 const NavBarLinks = props =>
-  <div className={props.className}>
+  <Div className={props.className}>
     <li><a data-scroll="true" href="#about">About</a></li>
     <li><a data-scroll="true" href="#services">Services</a></li>
     <li><a data-scroll="true" href="#clients">Clients</a></li>
     <li><a data-scroll="true" href="#techstack">Tech</a></li>
     <li><a data-scroll="true" href="#team">Team</a></li>
     <li><a href="https://blog.z-dev.io/">Blog</a></li>
-    <li><a data-scroll="true" href="#contact">Contact</a></li>
-  </div>
+    <li className="contactLink"><a data-scroll="true" href="#contact">Contact</a></li>
+  </Div>
 
-const LargeNavBarLinks = styled(NavBarLinks)`
-  .flex {
-    display: flex;
-  }
+const SmallNavBarLinks = styled(NavBarLinks)`
+  display: block;
 `
 export default class Header extends Component {
   constructor() {
@@ -133,12 +135,12 @@ export default class Header extends Component {
         </NavBarHeader>
 
         <LargeScreenLinks onClick={() => this.onResponsiveMenuClick()}>
-          <LargeNavBarLinks className="flex" />
+          <NavBarLinks />
         </LargeScreenLinks>
 
         {!this.state.collapsed
           ? <SmallScreenLinks onClick={() => this.onResponsiveMenuClick()}>
-              <NavBarLinks />
+              <SmallNavBarLinks />
             </SmallScreenLinks>
           : null}
       </NavBar>
