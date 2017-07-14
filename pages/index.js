@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Header from 'components/header'
 import ContactFooter from 'components/contactFooter'
 import Services from 'components/services'
@@ -12,6 +12,7 @@ import { configureAnchors } from 'react-scrollable-anchor'
 import ScrollableAnchor from 'components/scrollableAnchor'
 import Div from 'components/core/div'
 import styled from 'styled-components'
+import initializeChat from 'common/initializeChat.js'
 
 configureAnchors({ offset: -60, scrollDuration: 200 })
 
@@ -19,22 +20,31 @@ const PageContainer = styled(Div)`
   flex-direction: column;
   font-family: ${props => props.theme.serifFontFamily};
 `
-export default () =>
-  <Page>
-    <PageContainer>
-      <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-      <Header />
-      <ScrollableAnchor id={'about'} />
-      <About />
-      <ScrollableAnchor id={'services'} />
-      <Services />
-      <ScrollableAnchor id={'clients'} />
-      <Clients />
-      <ScrollableAnchor id={'techstack'} />
-      <TechStack />
-      <ScrollableAnchor id={'team'} />
-      <Team />
-      <ScrollableAnchor id={'contact'} />
-      <ContactFooter />
-    </PageContainer>
-  </Page>
+export default class Index extends Component {
+  componentDidMount() {
+    initializeChat()
+  }
+
+  render() {
+    return (
+      <Page>
+        <PageContainer>
+          <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+          <Header />
+          <ScrollableAnchor id={'about'} />
+          <About />
+          <ScrollableAnchor id={'services'} />
+          <Services />
+          <ScrollableAnchor id={'clients'} />
+          <Clients />
+          <ScrollableAnchor id={'techstack'} />
+          <TechStack />
+          <ScrollableAnchor id={'team'} />
+          <Team />
+          <ScrollableAnchor id={'contact'} />
+          <ContactFooter />
+        </PageContainer>
+      </Page>
+    )
+  }
+}
