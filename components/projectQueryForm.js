@@ -8,6 +8,7 @@ import Form from 'components/core/form.js'
 import Button from 'components/core/button.js'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import { H3, H5 } from 'components/core/headerText'
+import Text from 'components/core/text.js'
 import styled from 'styled-components'
 
 const OuterContainer = styled(ResponsiveContainer)`
@@ -52,15 +53,21 @@ const TextArea = styled.textarea`
   height: 100px;
   border: solid 1px #ccc;
   resize: none;
+  font-size: 15px;
 `
 
 const CloseQueryButton = styled.a`
   display: flex;
   align-self: center;
-  margin-top: 15px;
+  font-family: ${props => props.theme.serifFontFamily};
+  text-decoration: none;
 
   :hover {
     text-decoration: none;
+  }
+
+  :active {
+    color: black;
   }
 `
 
@@ -78,8 +85,16 @@ const ProjectQueryForm = styled(Form)`
 `
 
 const Label = styled.label`
-  margin-top: 20px;
+  font-family: ${props => props.theme.serifFontFamily};
+  margin: 20px 0 5px;
+  font-weight: 500;
 `
+
+const Input = styled.input`
+  font-family: ${props => props.theme.serifFontFamily};
+  font-size: 15px;
+`
+
 const InputContainer = styled(Div)`
   flex-direction: column;
 `
@@ -96,7 +111,7 @@ const SendQueryButton = styled(Button)`
   }
 `
 
-const Text = styled.text`
+const WarningText = styled(Text)`
   margin-bottom: 20px;
   text-align: center;
 `
@@ -163,11 +178,11 @@ export default class ProjectForm extends Component {
               <ProjectQueryForm onSubmit={() => this.onFormSubmit()}>
                 <InputContainer>
                   <Label htmlFor="name">Name:</Label>
-                  <input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
+                  <Input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
                 </InputContainer>
                 <InputContainer>
                   <Label htmlFor="email">Email:</Label>
-                  <input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
+                  <Input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
                 </InputContainer>
                 <InputContainer>
                   <Label htmlFor="message">Message:</Label>
@@ -175,7 +190,7 @@ export default class ProjectForm extends Component {
                 </InputContainer>
                 <SendQueryButton>Send</SendQueryButton>
               </ProjectQueryForm>
-              {this.state.formIncomplete ? <Text>Please fill out all of the boxes above</Text> : null}
+              {this.state.formIncomplete ? <WarningText>Please fill out all of the boxes above</WarningText> : null}
             </FormContainer>}
 
       </OuterContainer>

@@ -25,7 +25,7 @@ const Header = H1.extend`
 
 const Logo = styled.img`
   width: 300px;
-  margin: 40px 0 28px;
+  margin: 20px 0 28px;
 
   @media (max-width: ${props => props.theme.screenXsMax}px) {
     display: none;
