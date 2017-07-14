@@ -37,7 +37,6 @@ const ContactInnerContainer = Div.extend`
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  margin-top: 15px;
 `
 
 const ContactLink = Link.extend`
