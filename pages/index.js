@@ -21,8 +21,8 @@ const PageContainer = styled(Div)`
 `
 export default () =>
   <Page>
-    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     <PageContainer>
+      <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
       <Header />
       <ScrollableAnchor id={'about'} />
       <About />

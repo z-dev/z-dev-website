@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
         <Head>
           {styleTags}
         </Head>
-        <body>
+        <body style={{ margin: 0 }}>
           <div className="root">
             {main}
           </div>

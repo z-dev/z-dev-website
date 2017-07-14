@@ -33,4 +33,7 @@ export default {
   primaryColor: '#042559',
   lightGrey: '#ededed',
   textFontColor: '#595959',
+
+  zdevPrimaryColor: '#042559',
+  textColorHeaders: '#2b2b2b',
 }
