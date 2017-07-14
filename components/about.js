@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import Button from 'components/core/button'
-import { H3 } from 'components/core/headerText'
+import { H1 } from 'components/core/headerText'
 import ProjectQueryForm from 'components/projectQueryForm'
 import Modal from 'react-modal'
 import styled from 'styled-components'
@@ -18,7 +18,10 @@ const Container = styled(ResponsiveContainer)`
   padding-top: 30px;
   padding-bottom: 25px;
 `
-const Header = H3.extend`text-align: center;`
+const Header = H1.extend`
+  text-align: center;
+  font-weight: 500;
+`
 
 const Logo = styled.img`
   width: 300px;

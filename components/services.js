@@ -45,9 +45,15 @@ const ServiceIonicon = styled(Ionicon)`
   margin-bottom: -8px;
 `
 
-const ServiceTitle = H6.extend`text-align: center;`
+const ServiceTitle = H6.extend`
+  text-align: center;
+  margin: 15px 0 5px 0;
+`
 
-const ServiceBody = Text.extend`text-align: center;`
+const ServiceBody = Text.extend`
+  text-align: center;
+  margin-top: 5px;
+`
 
 const Service = props => {
   return (
