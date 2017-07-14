@@ -19,7 +19,8 @@ export default {
   mdGridMargin: 30,
   lgGridMargin: lgGridMargin,
   backgroundColor: '#eeeeee',
-  fontFamily: 'Source Sans Pro, sans-serif',
+  sansFontFamily: 'Source Sans Pro, sans-serif',
+  serifFontFamily: 'Raleway, serif',
   fontWeight: '300',
   linkColor: '#000000',
   h2FontSize: '34px',
@@ -30,5 +31,9 @@ export default {
   headerFontColor: '#000000',
   smallerHeaderFontColor: '#2b2b2b',
   primaryColor: '#042559',
-  lightGrey: '#e0e0e0',
+  lightGrey: '#ededed',
+  textFontColor: '#595959',
+
+  zdevPrimaryColor: '#042559',
+  textColorHeaders: '#2b2b2b',
 }

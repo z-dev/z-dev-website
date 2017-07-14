@@ -17,11 +17,12 @@ configureAnchors({ offset: -60, scrollDuration: 200 })
 
 const PageContainer = styled(Div)`
   flex-direction: column;
+  font-family: ${props => props.theme.serifFontFamily};
 `
 export default () =>
   <Page>
-    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     <PageContainer>
+      <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
       <Header />
       <ScrollableAnchor id={'about'} />
       <About />
