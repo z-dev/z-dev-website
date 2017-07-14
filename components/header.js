@@ -95,7 +95,7 @@ const MenuToggleButton = styled.button`
 `
 
 const NavBarLinks = props =>
-  <div style={props.style}>
+  <div className={props.className}>
     <li><a data-scroll="true" href="#about">About</a></li>
     <li><a data-scroll="true" href="#services">Services</a></li>
     <li><a data-scroll="true" href="#clients">Clients</a></li>
@@ -105,6 +105,11 @@ const NavBarLinks = props =>
     <li><a data-scroll="true" href="#contact">Contact</a></li>
   </div>
 
+const LargeNavBarLinks = styled(NavBarLinks)`
+  .flex {
+    display: flex;
+  }
+`
 export default class Header extends Component {
   constructor() {
     super()
@@ -128,7 +133,7 @@ export default class Header extends Component {
         </NavBarHeader>
 
         <LargeScreenLinks onClick={() => this.onResponsiveMenuClick()}>
-          <NavBarLinks style={{ display: 'flex' }} />
+          <LargeNavBarLinks className="flex" />
         </LargeScreenLinks>
 
         {!this.state.collapsed
