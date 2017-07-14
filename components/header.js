@@ -17,7 +17,8 @@ const LargeScreenLinks = styled.ul`
   li a {
     margin: 0 10px;
     font-size: 16px;
-    font-weight: 200;
+    color: black;
+    font-weight: 300;
     padding: 10px;
     text-decoration: none;
 
@@ -46,7 +47,8 @@ const SmallScreenLinks = styled.ul`
     display: flex;
     flex: 1;
     font-size: 16px;
-    font-weight: 200;
+    color: black;
+    font-weight: 300;
     padding: 10px 0 10px 25px;
 
     :hover {
@@ -69,7 +71,7 @@ const NavBarHeader = styled(Div)`
 
 const NavBar = styled(Div)`
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   border-bottom: solid 1px ${props => props.theme.lightGrey};
   position: fixed;
   top: 0;
