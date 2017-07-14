@@ -147,7 +147,7 @@ export default class ProjectForm extends Component {
 
   render() {
     return (
-      <OuterContainer onClick={console.log('hello')}>
+      <OuterContainer>
         <FormHeaderContainer>
           <InvisibleCloseQueryButton>X</InvisibleCloseQueryButton>
           <ProjectQueryTitle>How can we help you?</ProjectQueryTitle>
