@@ -21,6 +21,4 @@ const getEnvironment = () => {
 
 const config = _.merge({}, defaults, getEnvironment())
 
-console.log(`config: ${environment}`)
-
 export default config
