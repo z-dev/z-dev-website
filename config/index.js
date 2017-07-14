@@ -4,8 +4,6 @@ import productionConfig from './production'
 import developmentConfig from './development'
 import defaults from './defaults'
 
-
-
 const environment = process.env.CONFIG_ENV
 
 const getEnvironment = () => {
