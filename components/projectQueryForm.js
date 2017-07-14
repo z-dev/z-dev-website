@@ -45,17 +45,19 @@ const FormContainer = styled(Div)`
 `
 const FormHeaderContainer = styled(Div)`
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 `
 
 const TextArea = styled.textarea`
   height: 100px;
+  border: solid 1px #ccc;
+  resize: none;
 `
 
 const CloseQueryButton = styled.a`
   display: flex;
   align-self: center;
-  margin-left: 15px;
+  margin-top: 15px;
 
   :hover {
     text-decoration: none;
@@ -97,6 +99,10 @@ const Text = styled.text`
 
 const MessageSentTitle = styled(H5)`
   margin: 40px;
+  text-align: center;
+`
+
+const ProjectQueryTitle = styled(H3)`
   text-align: center;
 `
 
@@ -144,7 +150,7 @@ export default class ProjectForm extends Component {
       <OuterContainer>
         <FormHeaderContainer>
           <InvisibleCloseQueryButton>X</InvisibleCloseQueryButton>
-          <H3>Tell us about your project</H3>
+          <ProjectQueryTitle>How can we help you?</ProjectQueryTitle>
           <CloseQueryButton href="#" onClick={() => this.props.onXClick()}>X</CloseQueryButton>
         </FormHeaderContainer>
         {this.state.messageSent
@@ -163,7 +169,7 @@ export default class ProjectForm extends Component {
                   <Label htmlFor="message">Message:</Label>
                   <TextArea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
                 </InputContainer>
-                <SendQueryButton>Send your query</SendQueryButton>
+                <SendQueryButton>Send</SendQueryButton>
               </ProjectQueryForm>
               {this.state.formIncomplete ? <Text>Please fill out all of the boxes above</Text> : null}
             </FormContainer>}
