@@ -13,7 +13,7 @@ import ScrollableAnchor from 'components/scrollableAnchor'
 import Div from 'components/core/div'
 import styled from 'styled-components'
 
-configureAnchors({ offset: -80, scrollDuration: 200 })
+configureAnchors({ offset: -60, scrollDuration: 200 })
 
 const PageContainer = styled(Div)`
   flex-direction: column;
