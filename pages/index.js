@@ -10,13 +10,18 @@ import Page from 'components/page'
 import stylesheet from 'styles/index.scss'
 import { configureAnchors } from 'react-scrollable-anchor'
 import ScrollableAnchor from 'components/scrollableAnchor'
+import Div from 'components/core/div'
+import styled from 'styled-components'
 
-configureAnchors({ offset: -80, scrollDuration: 200 })
+configureAnchors({ offset: -60, scrollDuration: 200 })
 
+const PageContainer = styled(Div)`
+  flex-direction: column;
+`
 export default () =>
   <Page>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-    <div>
+    <PageContainer>
       <Header />
       <ScrollableAnchor id={'about'} />
       <About />
@@ -30,5 +35,5 @@ export default () =>
       <Team />
       <ScrollableAnchor id={'contact'} />
       <ContactFooter />
-    </div>
+    </PageContainer>
   </Page>
