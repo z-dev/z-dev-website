@@ -4,7 +4,7 @@ import productionConfig from './production'
 import developmentConfig from './development'
 import defaults from './defaults'
 
-console.log(process.env.CONFIG_ENV)
+
 
 const environment = process.env.CONFIG_ENV
 
@@ -21,6 +21,6 @@ const getEnvironment = () => {
 
 const config = _.merge({}, defaults, getEnvironment())
 
-console.log(`config: ${JSON.stringify(config)}`)
+console.log(`config: ${environment}`)
 
 export default config

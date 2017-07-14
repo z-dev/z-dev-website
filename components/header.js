@@ -70,7 +70,7 @@ const NavBar = styled(Div)`
   position: fixed;
   top: 0;
   background: white;
-  width: 100%;
+  z-index: 100;
 
   @media (max-width: ${props => props.theme.screenXsMax}px) {
     flex-direction: column;
@@ -92,6 +92,17 @@ const MenuToggleButton = styled.button`
   border: solid 1px ${props => props.theme.lightGrey};
   border-radius: 4px;
 `
+
+const NavBarLinks = props =>
+  <div style={props.style}>
+    <li><a data-scroll="true" href="#about">About</a></li>
+    <li><a data-scroll="true" href="#services">Services</a></li>
+    <li><a data-scroll="true" href="#clients">Clients</a></li>
+    <li><a data-scroll="true" href="#techstack">Tech</a></li>
+    <li><a data-scroll="true" href="#team">Team</a></li>
+    <li><a href="https://blog.z-dev.io/">Blog</a></li>
+    <li><a data-scroll="true" href="#contact">Contact</a></li>
+  </div>
 
 export default class Header extends Component {
   constructor() {
@@ -116,24 +127,12 @@ export default class Header extends Component {
         </NavBarHeader>
 
         <LargeScreenLinks onClick={() => this.onResponsiveMenuClick()}>
-          <li><a data-scroll="true" href="#about">About</a></li>
-          <li><a data-scroll="true" href="#services">Services</a></li>
-          <li><a data-scroll="true" href="#clients">Clients</a></li>
-          <li><a data-scroll="true" href="#techstack">Tech</a></li>
-          <li><a data-scroll="true" href="#team">Team</a></li>
-          <li><a href="https://blog.z-dev.io/">Blog</a></li>
-          <li><a data-scroll="true" href="#contact">Contact</a></li>
+          <NavBarLinks style={{ display: 'flex' }} />
         </LargeScreenLinks>
 
         {!this.state.collapsed
           ? <SmallScreenLinks onClick={() => this.onResponsiveMenuClick()}>
-              <li><a data-scroll="true" href="#about">About</a></li>
-              <li><a data-scroll="true" href="#services">Services</a></li>
-              <li><a data-scroll="true" href="#clients">Clients</a></li>
-              <li><a data-scroll="true" href="#techstack">Tech</a></li>
-              <li><a data-scroll="true" href="#team">Team</a></li>
-              <li><a href="https://blog.z-dev.io/">Blog</a></li>
-              <li><a data-scroll="true" href="#contact">Contact</a></li>
+              <NavBarLinks />
             </SmallScreenLinks>
           : null}
       </NavBar>
