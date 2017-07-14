@@ -29,7 +29,6 @@ export default {
   h5FontSize: '22.2px',
   h6FontSize: '19.2px',
   headerFontColor: '#000000',
-  headerFont: 'Raleway, serif',
   smallerHeaderFontColor: '#2b2b2b',
   primaryColor: '#042559',
   lightGrey: '#ededed',

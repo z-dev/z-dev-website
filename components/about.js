@@ -34,6 +34,7 @@ const Logo = styled.img`
 
 const CallToAction = Button.extend`
   margin-top: 48px;
+  cursor: pointer;
 
   :focus {
     outline:0;

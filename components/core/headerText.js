@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const H1 = styled.h1`
-  font-family: ${props => props.theme.headerFont};
+  font-family: ${props => props.theme.serifFontFamily};
   color: ${props => props.theme.headerFontColor};
 `
 export const H2 = H1.withComponent('h2').extend`

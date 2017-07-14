@@ -105,6 +105,7 @@ const SendQueryButton = styled(Button)`
   display: flex;
   align-self: center;
   margin-bottom: 25px;
+  cursor: pointer;
 
   :focus {
     outline: 0;
