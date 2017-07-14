@@ -65,12 +65,13 @@ const NavBarHeader = styled(Div)`
 
 const NavBar = styled(Div)`
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   border-bottom: solid 1px ${props => props.theme.lightGrey};
   position: fixed;
   top: 0;
   background: white;
   z-index: 100;
+  width: 100%;
 
   @media (max-width: ${props => props.theme.screenXsMax}px) {
     flex-direction: column;
