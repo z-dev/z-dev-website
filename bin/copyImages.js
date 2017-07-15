@@ -66,7 +66,7 @@ resizeImage('assets/images/techStackLogos/next.png', {height: 80})
 resizeImage('assets/images/techStackLogos/webpack.png', {height: 80})
 resizeImage('assets/images/staff/rich.jpg', {width: 300, height: 300})
 resizeImage('assets/images/staff/john.jpg', {width: 300, height: 300})
-resizeImage('assets/images/projects/zdevexpresso.png', {width: 1000, height: 1000})
+resizeImage('assets/images/projects/zdevexpresso.png', {width: 600, height: 600})
 
 
 copySvgsToStatic()
