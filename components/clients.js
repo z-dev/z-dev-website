@@ -169,10 +169,13 @@ export default () =>
               <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
             </CarouselItem>
             <CarouselItem>
-              <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
+              <Expresso src="/static/projects/expresso1.jpg" alt="Expresso App" />
             </CarouselItem>
             <CarouselItem>
-              <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
+              <Expresso src="/static/projects/expresso2.jpg" alt="Expresso App" />
+            </CarouselItem>
+            <CarouselItem>
+              <Expresso src="/static/projects/expresso3.jpg" alt="Expresso App" />
             </CarouselItem>
           </Carousel>
         </ExpressoImageContainer>
