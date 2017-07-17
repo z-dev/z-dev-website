@@ -14,6 +14,7 @@ const Container = styled(ResponsiveContainer)`
     justify-content: center;
     flex-direction: column;
     align-items: stretch;
+    width: 90%;
   }
 
   padding-top: 0;
