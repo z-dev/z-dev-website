@@ -44,10 +44,14 @@ const ContactLink = Link.extend`
   margin-bottom: 10px;
 `
 
+const ContactHeader = styled(H5)`
+  margin: 30px 0;
+`
+
 export default () =>
   <Container>
     <ContactContainer>
-      <H5>Location</H5>
+      <ContactHeader>Location</ContactHeader>
       <ContactInnerContainer>
         <ContactLink href="https://www.google.co.uk/maps/place/5+Scrutton+St,+London+EC2A+4HJ/@51.5235371,-0.0857933,17z/data=!3m1!4b1!4m5!3m4!1s0x48761cafc64645e3:0x985b56deeafe698c!8m2!3d51.5235371!4d-0.0836046">
           5 Scrutton Street, London, EC2A 4HJ
@@ -55,14 +59,14 @@ export default () =>
       </ContactInnerContainer>
     </ContactContainer>
     <ContactContainer>
-      <H5>Contact</H5>
+      <ContactHeader>Contact</ContactHeader>
       <ContactInnerContainer>
         <ContactLink href="tel:+442071758119">0207 1758119</ContactLink>
         <ContactLink href="mailto:hello@z-dev.io">hello@z-dev.io</ContactLink>
       </ContactInnerContainer>
     </ContactContainer>
     <ContactContainer>
-      <H5>LinkedIn</H5>
+      <ContactHeader>LinkedIn</ContactHeader>
       <ContactInnerContainer>
         <IoniconLink url="https://www.linkedin.com/company/zdev-limited" icon="ion-social-linkedin" />
       </ContactInnerContainer>

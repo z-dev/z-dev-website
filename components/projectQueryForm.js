@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import moment from 'moment'
 import _ from 'lodash'
-import 'common/initializeFirebase.js'
-import Div from 'components/core/div.js'
-import Form from 'components/core/form.js'
-import Button from 'components/core/button.js'
+import 'common/initializeFirebase'
+import Div from 'components/core/div'
+import TextAreaComponent from 'components/core/textarea'
+import Form from 'components/core/form'
+import Button from 'components/core/button'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import { H3, H5 } from 'components/core/headerText'
-import Text from 'components/core/text.js'
+import Text from 'components/core/text'
+import Input from 'components/core/input'
 import styled from 'styled-components'
 
 const OuterContainer = styled(ResponsiveContainer)`
@@ -49,11 +51,9 @@ const FormHeaderContainer = styled(Div)`
   justify-content: space-between;
 `
 
-const TextArea = styled.textarea`
+const TextArea = styled(TextAreaComponent)`
   height: 100px;
-  border: solid 1px #ccc;
   resize: none;
-  font-size: 15px;
 `
 
 const CloseQueryButton = styled.a`
@@ -88,11 +88,6 @@ const Label = styled.label`
   font-family: ${props => props.theme.serifFontFamily};
   margin: 20px 0 5px;
   font-weight: 500;
-`
-
-const Input = styled.input`
-  font-family: ${props => props.theme.serifFontFamily};
-  font-size: 15px;
 `
 
 const InputContainer = styled(Div)`

@@ -2,7 +2,7 @@ import React from 'react'
 import ResponsiveContainer from 'components/core/responsiveContainer'
 import Div from 'components/core/div'
 import Text from 'components/core/text'
-import { H2, H3 } from 'components/core/headerText'
+import { H2 } from 'components/core/headerText'
 import styled from 'styled-components'
 import Carousel from 'react-slick'
 
@@ -18,15 +18,6 @@ const Container = styled(ResponsiveContainer)`
 
   padding-top: 0;
   padding-bottom: 45px;
-`
-
-const Header = H3.extend`
-  align-text: center;
-  padding-bottom: 0;
-  margin-top: 0;
-  @media (max-width: ${projectResponsiveBreak}px) {
-    display:none;
-  }
 `
 
 const ExpressoProject = Div.extend`
@@ -147,6 +138,11 @@ const CarouselItem = Div.extend`
   display: flex !important;
 `
 
+const ExpressoLogo = styled.img`
+  height: 40px;
+  margin-bottom: 20px;
+`
+
 export default () =>
   <Container>
     <Intro>
@@ -173,17 +169,20 @@ export default () =>
               <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
             </CarouselItem>
             <CarouselItem>
-              <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
+              <Expresso src="/static/projects/expresso1.jpg" alt="Expresso App" />
             </CarouselItem>
             <CarouselItem>
-              <Expresso src="/static/projects/zdevexpresso.png" alt="Expresso App" />
+              <Expresso src="/static/projects/expresso2.jpg" alt="Expresso App" />
+            </CarouselItem>
+            <CarouselItem>
+              <Expresso src="/static/projects/expresso3.jpg" alt="Expresso App" />
             </CarouselItem>
           </Carousel>
         </ExpressoImageContainer>
         <ExpressoTextContainer>
           <ExpressoTextInnerContainer>
-            <Header>Expresso</Header>
-            <ExpressoText>We partnered with the guys at Expresso to take their idea from paper to App Store.</ExpressoText>
+            <ExpressoLogo src="/static/projects/expressoLogo.svg" />
+            <ExpressoText>We partnered with the team at Expresso to take their idea from paper to App Store.</ExpressoText>
             <ExpressoText>Expresso is an App to allow people to pre-order coffee and pick up.</ExpressoText>
             <ExpressoText>We built a beautiful App to prove the business case.</ExpressoText>
           </ExpressoTextInnerContainer>
