@@ -94,6 +94,7 @@ const MenuToggleButton = styled.button`
     background: ${props => props.theme.lightGrey};
   }
 
+  padding: 7px 5px 5px;
   margin-right: 10px;
   background: white;
   border: solid 1px ${props => props.theme.lightGrey};
