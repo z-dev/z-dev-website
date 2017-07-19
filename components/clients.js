@@ -55,7 +55,7 @@ const ExpressoTextContainer = Div.extend`
 `
 
 const ExpressoImageContainer = Div.extend`
-  width: ${projectWidth / 2}px;
+  width: ${projectWidth / 2.5}px;
   @media (max-width: ${projectResponsiveBreak}px) {
     width: none;
   }
