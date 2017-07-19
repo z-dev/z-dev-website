@@ -183,8 +183,8 @@ export default () =>
         <ExpressoTextContainer>
           <ExpressoTextInnerContainer>
             <ExpressoLogo src="/static/projects/expressoLogo.svg" />
-            <ExpressoText>We partnered with the team at Expresso to take their idea from paper to App Store.</ExpressoText>
-            <ExpressoText>Expresso is an App to allow people to pre-order coffee and pick up.</ExpressoText>
+            <ExpressoText>We partnered with the team at Expresso to take their idea from paper to the App Store.</ExpressoText>
+            <ExpressoText>Expresso is an App to allow people to pre-order coffee and pick it up.</ExpressoText>
             <ExpressoText>We built a beautiful App to prove the business case.</ExpressoText>
           </ExpressoTextInnerContainer>
         </ExpressoTextContainer>
