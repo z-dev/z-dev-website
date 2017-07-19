@@ -56,8 +56,10 @@ const ExpressoTextContainer = Div.extend`
 
 const ExpressoImageContainer = Div.extend`
   width: ${projectWidth / 2.5}px;
+  margin-left: 75px;
   @media (max-width: ${projectResponsiveBreak}px) {
     width: none;
+    margin-left: 0;
   }
   justify-content: center;
   * {
