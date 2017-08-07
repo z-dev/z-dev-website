@@ -41,7 +41,7 @@ const LogoImage = styled.img`
   margin: 20px;
 `
 
-const Logo = props => <LogoImage src={`/static/techStackLogos/${props.logo}`} style={props.style} />
+const Logo = props => <LogoImage src={`/static/techStackLogos/${props.logo}`} alt={props.altText} style={props.style} />
 
 const LogosContainer = Div.extend`
   align-items: center;
@@ -58,15 +58,15 @@ export default () =>
       <Tagline>We‘re Fullstack Javascript Developers.</Tagline>
       <Headline>We work with:</Headline>
       <LogosContainer>
-        <Logo logo="node.svg" />
-        <Logo logo="npm.svg" />
-        <Logo logo="react.svg" />
-        <Logo logo="reactNative.svg" />
-        <Logo logo="redux.png" />
-        <Logo logo="firebase.png" />
-        <Logo logo="next.png" />
-        <Logo logo="webpack.png" />
-        <Logo logo="docker.png" />
+        <Logo logo="node.svg" altText="Node" />
+        <Logo logo="npm.svg" altText="npm" />
+        <Logo logo="react.svg" altText="React" />
+        <Logo logo="reactNative.svg" altText="React Native" />
+        <Logo logo="redux.png" altText="Redux" />
+        <Logo logo="firebase.png" altText="Firebase" />
+        <Logo logo="next.png" altText="next.js" />
+        <Logo logo="webpack.png" altText="Webpack" />
+        <Logo logo="docker.png" altText="Docker" />
       </LogosContainer>
       <Headline>
         See our{' '}
