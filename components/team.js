@@ -53,7 +53,10 @@ const TeamMember = props => {
       <TeamMemberDescription>
         {props.description}
       </TeamMemberDescription>
-      <IoniconLink url={props.linkedInProfile} icon="ion-social-linkedin" />
+      <TeamMemberDescription>
+        {props.description2}
+      </TeamMemberDescription>
+      {props.linkedInProfile ? <IoniconLink url={props.linkedInProfile} icon="ion-social-linkedin" /> : null}
     </TeamMemberContainer>
   )
 }
@@ -66,13 +69,18 @@ export default () =>
         name="Richard"
         image="/static/staff/rich.jpg"
         linkedInProfile="https://www.linkedin.com/in/richardgill3"
-        description="Richard has a decade of experience ranging from Investment Banks to Start Ups. He enjoys learning new technologies and helping people solve real business problems."
+        description="Richard has over a decade of experience ranging from Investment Banks to Start Ups. He also enjoys watching rocket launches."
       />
       <TeamMember
         name="John"
-        image="/static/staff/john.jpg"
-        linkedInProfile="https://uk.linkedin.com/in/johnagill1"
-        description="John specializes in frontend development. He‘s got a keen eye for detail and loves building great applications."
+        image="/static/staff/john.png"
+        description="John is a Javascript, C# and Go developer. When he's not coding he's competing in or watching e-sports."
       />
+      <TeamMember
+        name="Alex"
+        image="/static/staff/alex.png"
+        description="Alex is a fullstack developer. He builds awesome chatbots and websites. When he's not doing that - he's probably listening to 80's music."
+      />
+      <TeamMember name="Dan" image="/static/staff/dan.png" description="Dan builds great Apps. In his downtime he's probably reading a classic novel." />
     </TeamMembersContainer>
   </Container>
