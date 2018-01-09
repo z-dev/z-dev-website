@@ -9,14 +9,9 @@ export default class MyDocument extends Document {
     const styleTags = sheet.getStyleElement()
     return (
       <html>
-        <Head>
-          {styleTags}
-        </Head>
+        <Head>{styleTags}</Head>
         <body style={{ margin: 0 }}>
-
-          <div className="root">
-            {main}
-          </div>
+          <div className="root">{main}</div>
           <NextScript />
           <script type="text/javascript" src="https://secure.leadforensics.com/js/113807.js" />
         </body>

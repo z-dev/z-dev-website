@@ -37,7 +37,7 @@ const CallToAction = Button.extend`
   cursor: pointer;
 
   :focus {
-    outline:0;
+    outline: 0;
   }
 `
 
@@ -74,9 +74,7 @@ export default class About extends Component {
       <Container>
         <Logo src="/static/logo.svg" alt="ZDev logo" />
         <Header>Website and App Developers</Header>
-        <CallToAction onClick={() => this.openProjectQueryModal()}>
-          Tell us about your project
-        </CallToAction>
+        <CallToAction onClick={() => this.openProjectQueryModal()}>Tell us about your project</CallToAction>
         <Modal isOpen={this.state.projectModalOpen} contentLabel="Project Query Modal" style={modalStyle}>
           <ProjectQueryForm onXClick={() => this.closeProjectQueryModal()} />
         </Modal>

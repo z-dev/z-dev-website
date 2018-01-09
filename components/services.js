@@ -18,7 +18,9 @@ const Container = styled(ResponsiveContainer)`
   padding-top: 30px;
   padding-bottom: 45px;
 `
-const Header = H2.extend`text-align: center;`
+const Header = H2.extend`
+  text-align: center;
+`
 
 const InnerContainer = Div.extend`
   flex-direction: column;
@@ -38,7 +40,9 @@ const ServiceContainer = Div.extend`
   }
   margin: 30px;
 `
-const RightHandSide = Div.extend`flex-direction: column;`
+const RightHandSide = Div.extend`
+  flex-direction: column;
+`
 
 const ServiceIonicon = styled(Ionicon)`
   font-size: 60px;
@@ -60,18 +64,14 @@ const Service = props => {
     <ServiceContainer>
       <ServiceIonicon className={props.icon} />
       <RightHandSide>
-        <ServiceTitle>
-          {props.title}
-        </ServiceTitle>
-        <ServiceBody>
-          {props.body}
-        </ServiceBody>
+        <ServiceTitle>{props.title}</ServiceTitle>
+        <ServiceBody>{props.body}</ServiceBody>
       </RightHandSide>
     </ServiceContainer>
   )
 }
 
-export default () =>
+export default () => (
   <Container>
     <InnerContainer>
       <Header>Services</Header>
@@ -85,3 +85,4 @@ export default () =>
       </ServicesContainer>
     </InnerContainer>
   </Container>
+)
