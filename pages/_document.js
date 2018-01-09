@@ -12,11 +12,11 @@ export default class MyDocument extends Document {
   render() {
     return (
       <html>
-        <Head>
-          {this.props.styleTags}
-        </Head>
+        <Head>{this.props.styleTags}</Head>
         <body style={{ margin: 0 }}>
-          <div className="root">{main}</div>
+          <div className="root">
+            <Main />
+          </div>
           <NextScript />
           <script type="text/javascript" src="https://secure.leadforensics.com/js/113807.js" />
         </body>
