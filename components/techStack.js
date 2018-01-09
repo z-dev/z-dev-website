@@ -20,9 +20,13 @@ const Container = styled(ResponsiveContainer)`
   padding-bottom: 45px;
 `
 
-const Header = H2.extend`text-align: center;`
+const Header = H2.extend`
+  text-align: center;
+`
 
-const Tagline = H5.extend`text-align: center;`
+const Tagline = H5.extend`
+  text-align: center;
+`
 
 const TechStackContainer = Div.extend`
   flex-direction: column;
@@ -51,7 +55,7 @@ const LogosContainer = Div.extend`
   max-width: 1000px;
 `
 
-export default () =>
+export default () => (
   <Container>
     <TechStackContainer>
       <Header>Tech Stack</Header>
@@ -77,3 +81,4 @@ export default () =>
       </Headline>
     </TechStackContainer>
   </Container>
+)

@@ -17,7 +17,9 @@ const Container = styled(ResponsiveContainer)`
   padding-bottom: 25px;
 `
 
-const Header = H2.extend`align-text: center;`
+const Header = H2.extend`
+  align-text: center;
+`
 
 const TeamMemberContainer = Div.extend`
   flex-direction: column;
@@ -47,21 +49,15 @@ const TeamMember = props => {
   return (
     <TeamMemberContainer>
       <HeadShotImage src={props.image} alt={props.name} />
-      <H4>
-        {props.name}
-      </H4>
-      <TeamMemberDescription>
-        {props.description}
-      </TeamMemberDescription>
-      <TeamMemberDescription>
-        {props.description2}
-      </TeamMemberDescription>
+      <H4>{props.name}</H4>
+      <TeamMemberDescription>{props.description}</TeamMemberDescription>
+      <TeamMemberDescription>{props.description2}</TeamMemberDescription>
       {props.linkedInProfile ? <IoniconLink url={props.linkedInProfile} icon="ion-social-linkedin" /> : null}
     </TeamMemberContainer>
   )
 }
 
-export default () =>
+export default () => (
   <Container>
     <Header>The Team</Header>
     <TeamMembersContainer>
@@ -84,3 +80,4 @@ export default () =>
       <TeamMember name="Dan" image="/static/staff/dan.png" description="Dan builds great Apps. In his downtime he's probably reading a classic novel." />
     </TeamMembersContainer>
   </Container>
+)

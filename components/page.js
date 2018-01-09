@@ -3,7 +3,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import theme from 'styles/theme'
 
-export default props =>
+export default props => (
   <ThemeProvider theme={theme}>
     <div>
       <Head>
@@ -19,3 +19,4 @@ export default props =>
       {props.children}
     </div>
   </ThemeProvider>
+)

@@ -48,7 +48,7 @@ const ContactHeader = styled(H5)`
   margin: 30px 0;
 `
 
-export default () =>
+export default () => (
   <Container>
     <ContactContainer>
       <ContactHeader>Location</ContactHeader>
@@ -72,3 +72,4 @@ export default () =>
       </ContactInnerContainer>
     </ContactContainer>
   </Container>
+)

@@ -16,10 +16,7 @@ export default class MyDocument extends Document {
           {this.props.styleTags}
         </Head>
         <body style={{ margin: 0 }}>
-
-          <div className="root">
-            {main}
-          </div>
+          <div className="root">{main}</div>
           <NextScript />
           <script type="text/javascript" src="https://secure.leadforensics.com/js/113807.js" />
         </body>
