@@ -15,7 +15,7 @@
         "extensions": ["css$", "scss$"]
       }
     ],
-    ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ],
+    ["styled-components", { "ssr": true } ],
     ["transform-define", "./envConfig.js"]
   ],
   "presets": [
