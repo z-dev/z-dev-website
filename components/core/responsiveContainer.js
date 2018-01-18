@@ -42,9 +42,7 @@ const OuterContainer = Div.extend`
 export default props => {
   return (
     <OuterContainer className={props.className}>
-      <Div id="innerContainer">
-        {props.children}
-      </Div>
+      <Div id="innerContainer">{props.children}</Div>
     </OuterContainer>
   )
 }

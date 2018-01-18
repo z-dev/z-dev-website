@@ -100,16 +100,43 @@ const MenuToggleButton = styled.button`
   border-radius: 4px;
 `
 
-const NavBarLinks = props =>
+const NavBarLinks = props => (
   <Div className={props.className}>
-    <li><a data-scroll="true" href="#about">About</a></li>
-    <li><a data-scroll="true" href="#services">Services</a></li>
-    <li><a data-scroll="true" href="#clients">Clients</a></li>
-    <li><a data-scroll="true" href="#techstack">Tech</a></li>
-    <li><a data-scroll="true" href="#team">Team</a></li>
-    <li><a href="https://blog.z-dev.io/">Blog</a></li>
-    <li className="contactLink"><a data-scroll="true" href="#contact">Contact</a></li>
+    <li>
+      <a data-scroll="true" href="#about">
+        About
+      </a>
+    </li>
+    <li>
+      <a data-scroll="true" href="#services">
+        Services
+      </a>
+    </li>
+    <li>
+      <a data-scroll="true" href="#clients">
+        Clients
+      </a>
+    </li>
+    <li>
+      <a data-scroll="true" href="#techstack">
+        Tech
+      </a>
+    </li>
+    <li>
+      <a data-scroll="true" href="#team">
+        Team
+      </a>
+    </li>
+    <li>
+      <a href="https://blog.z-dev.io/">Blog</a>
+    </li>
+    <li className="contactLink">
+      <a data-scroll="true" href="#contact">
+        Contact
+      </a>
+    </li>
   </Div>
+)
 
 const SmallNavBarLinks = styled(NavBarLinks)`
   display: block;
@@ -140,11 +167,11 @@ export default class Header extends Component {
           <NavBarLinks />
         </LargeScreenLinks>
 
-        {!this.state.collapsed
-          ? <SmallScreenLinks onClick={() => this.onResponsiveMenuClick()}>
-              <SmallNavBarLinks />
-            </SmallScreenLinks>
-          : null}
+        {!this.state.collapsed ? (
+          <SmallScreenLinks onClick={() => this.onResponsiveMenuClick()}>
+            <SmallNavBarLinks />
+          </SmallScreenLinks>
+        ) : null}
       </NavBar>
     )
   }

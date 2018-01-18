@@ -7,6 +7,10 @@ export default class Form extends Component {
   }
 
   render() {
-    return <form {...this.props} onSubmit={e => this.onSubmit(e)}>{this.props.children}</form>
+    return (
+      <form {...this.props} onSubmit={e => this.onSubmit(e)}>
+        {this.props.children}
+      </form>
+    )
   }
 }

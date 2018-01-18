@@ -122,7 +122,10 @@ const ProjectQueryTitle = styled(H3)`
 `
 
 const sendMessage = message => {
-  firebase.database().ref('/projectQueries').update(message)
+  firebase
+    .database()
+    .ref('/projectQueries')
+    .update(message)
 }
 
 export default class ProjectForm extends Component {
@@ -133,7 +136,9 @@ export default class ProjectForm extends Component {
 
   onFormSubmit() {
     if (this.state.name && this.state.email && this.state.message) {
-      const timestamp = moment().utc().format()
+      const timestamp = moment()
+        .utc()
+        .format()
       sendMessage({
         [timestamp]: {
           userName: this.state.name,
@@ -166,29 +171,32 @@ export default class ProjectForm extends Component {
         <FormHeaderContainer>
           <InvisibleCloseQueryButton>X</InvisibleCloseQueryButton>
           <ProjectQueryTitle>How can we help you?</ProjectQueryTitle>
-          <CloseQueryButton href="#" onClick={() => this.props.onXClick()}>X</CloseQueryButton>
+          <CloseQueryButton href="#" onClick={() => this.props.onXClick()}>
+            X
+          </CloseQueryButton>
         </FormHeaderContainer>
-        {this.state.messageSent
-          ? <MessageSentTitle>Your enquiry has been sent, we will be in touch soon</MessageSentTitle>
-          : <FormContainer>
-              <ProjectQueryForm onSubmit={() => this.onFormSubmit()}>
-                <InputContainer>
-                  <Label htmlFor="name">Name:</Label>
-                  <Input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
-                </InputContainer>
-                <InputContainer>
-                  <Label htmlFor="email">Email:</Label>
-                  <Input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
-                </InputContainer>
-                <InputContainer>
-                  <Label htmlFor="message">Message:</Label>
-                  <TextArea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
-                </InputContainer>
-                <SendQueryButton>Send</SendQueryButton>
-              </ProjectQueryForm>
-              {this.state.formIncomplete ? <WarningText>Please fill out all of the boxes above</WarningText> : null}
-            </FormContainer>}
-
+        {this.state.messageSent ? (
+          <MessageSentTitle>Your enquiry has been sent, we will be in touch soon</MessageSentTitle>
+        ) : (
+          <FormContainer>
+            <ProjectQueryForm onSubmit={() => this.onFormSubmit()}>
+              <InputContainer>
+                <Label htmlFor="name">Name:</Label>
+                <Input id="name" type="text" value={this.state.name} onChange={event => this.updateName(event.target.value)} />
+              </InputContainer>
+              <InputContainer>
+                <Label htmlFor="email">Email:</Label>
+                <Input id="email" type="text" value={this.state.email} onChange={event => this.updateEmail(event.target.value)} />
+              </InputContainer>
+              <InputContainer>
+                <Label htmlFor="message">Message:</Label>
+                <TextArea id="message" value={this.state.message} onChange={event => this.updateMessage(event.target.value)} />
+              </InputContainer>
+              <SendQueryButton>Send</SendQueryButton>
+            </ProjectQueryForm>
+            {this.state.formIncomplete ? <WarningText>Please fill out all of the boxes above</WarningText> : null}
+          </FormContainer>
+        )}
       </OuterContainer>
     )
   }
