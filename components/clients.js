@@ -51,7 +51,7 @@ const ExpressoTextContainer = Div.extend`
     width: auto;
   }
   justify-content: center;
-  width: ${projectWidth / 2}px
+  width: ${projectWidth / 2}px;
 `
 
 const ExpressoImageContainer = Div.extend`
@@ -144,7 +144,7 @@ const ExpressoLogo = styled.img`
   margin-bottom: 20px;
 `
 
-export default () =>
+export default () => (
   <Container>
     <Intro>
       <TopHeader>{"We'd love to work with you"}</TopHeader>
@@ -191,3 +191,4 @@ export default () =>
       </ExpressoProject>
     </ExpressoProjectContainer>
   </Container>
+)
