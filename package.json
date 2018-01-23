@@ -37,7 +37,6 @@
     "firebase": "^4.1.3",
     "glob": "7.1.1",
     "ionicons-pre": "^1.0.0-pre",
-    "isobject": "^3.0.1",
     "moment": "^2.18.1",
     "next": "^4.2.1",
     "node-sass": "^4.4.0",
