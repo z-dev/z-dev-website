@@ -16,7 +16,11 @@
       }
     ],
     ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ],
-    ["transform-define", "./envConfig.js"]
+    ["transform-define", "./envConfig.js"],
+    ["babel-plugin-root-import", [{
+      "rootPathPrefix": "~",
+      "rootPathSuffix": "."
+    }]]
   ],
   "presets": [
     "next/babel"
