@@ -2,6 +2,6 @@
   "name": "z-dev-site-dev",
   "alias": "z-dev-site-dev",
   "env": {
-    "DATABASE_NAME": "development"
+    "CONFIG_ENV": "development"
   }
 }

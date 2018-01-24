@@ -2,6 +2,6 @@
   "name": "z-dev-site-prod",
   "alias": "z-dev.io",
   "env": {
-    "DATABASE_NAME": "production"
+    "CONFIG_ENV": "production"
   }
 }
