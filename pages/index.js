@@ -9,10 +9,11 @@ import Clients from 'components/clients'
 import Page from 'components/page'
 import stylesheet from 'styles/index.scss'
 import { configureAnchors } from 'react-scrollable-anchor'
-import ScrollableAnchor from 'components/scrollableAnchor'
-import Div from 'components/core/div'
+import ScrollableAnchor from '~/components/scrollableAnchor'
+import Div from '~/components/core/div'
 import styled from 'styled-components'
-import initializeChat from 'common/initializeChat.js'
+import initializeChat from '~/common/initializeChat.js'
+import { trackPageView } from '~/common/mixpanel'
 
 configureAnchors({ offset: -60, scrollDuration: 200 })
 
@@ -23,6 +24,7 @@ const PageContainer = styled(Div)`
 export default class Index extends Component {
   componentDidMount() {
     initializeChat()
+    trackPageView()
   }
 
   render() {

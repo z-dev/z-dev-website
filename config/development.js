@@ -5,6 +5,7 @@ export default {
     databaseURL: "https://z-dev-site-dev.firebaseio.com",
     projectId: "z-dev-site-dev",
     storageBucket: "z-dev-site-dev.appspot.com",
-    messagingSenderId: "986603931876"
-  }
+    messagingSenderId: "986603931876",
+  },
+  mixPanelToken: '5e7b047a10fcda614c94367c61a3f31a',
 }
