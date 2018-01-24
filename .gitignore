@@ -2,3 +2,5 @@
 node_modules
 *.log
 static
+.DS_Store
+now.json
