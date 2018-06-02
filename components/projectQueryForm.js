@@ -61,6 +61,7 @@ const CloseQueryButton = styled.a`
   align-self: center;
   font-family: ${props => props.theme.serifFontFamily};
   text-decoration: none;
+  color: black;
 
   :hover {
     text-decoration: none;
